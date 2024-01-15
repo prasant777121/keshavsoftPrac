@@ -5,15 +5,6 @@ let StartFunc = ({ inFromFetch }) => {
 
     $table.bootstrapTable('destroy');
 
-    // $table.bootstrapTable({ data:inFromFetch});
-
-    // $table.bootstrapTable({
-    //     data: inFromFetch, onPostBody: function () {
-    //         $(".fixed-table-toolbar .search .search-input").focus()
-    //     },
-    //     onClickRow: LocalOnClickRow
-    // });
-
     $table.bootstrapTable({
         onPostBody: function () {
             $(".fixed-table-toolbar .search .search-input").focus()
@@ -23,10 +14,8 @@ let StartFunc = ({ inFromFetch }) => {
 
 };
 
-let LocalOnClickRow = async (row, $element, field) => {
-
-    console.log(row, $element, field)
-    
+let LocalOnClickRow = async (row, $element, field) => {   
+    console.log("Row", row); 
     if (field === 2) {
         let LocalFromSwal = await swal.fire({
             title: "Are you sure?",
@@ -38,9 +27,14 @@ let LocalOnClickRow = async (row, $element, field) => {
         });
 
         if (LocalFromSwal.isConfirmed) {
-            console.log("aaaaa", row, $element, field, field === 2);
-            //   $(e.target).closest('form').submit() // Post the surrounding form
-            let LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.UuId });
+
+            let LocalFromDeleteFetch;
+            if ("UuId" in row) {
+                LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.UuId });
+            } else {
+                LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.id });
+                
+            }
 
             console.log("LocalFromDeleteFetch", LocalFromDeleteFetch);
 
