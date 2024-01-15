@@ -11,7 +11,7 @@ let StartFunc = async () => {
         storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
     });
 
-    const Tickets = sequelize.define('sample', dataColumns, { freezeTableName: true }
+    const Tickets = sequelize.define('sample', dataColumnsKData/JSON/316/readFile.js, { freezeTableName: true }
     );
 
     const users = await Tickets.findAll();
