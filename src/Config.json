@@ -1,5 +1,5 @@
 {
     "JsonPath": "KData/JSON/316",
     "DbName": "sample.db",
-    "isSequelize": false
+    "isSequelize": true
 }

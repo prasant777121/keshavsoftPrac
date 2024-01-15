@@ -1,9 +1,9 @@
 import { DeleteFunc as DeleteFuncRepo } from '../../repos/DeleteFuncs/EntryFile.js';
 
-let DeleteFunc = (req, res) => {
+let DeleteFunc =  async (req, res) => {
     let LocalId = req.params.Id;
 
-    let LocalFromRepo = DeleteFuncRepo({ inId: LocalId });
+    let LocalFromRepo = await DeleteFuncRepo({ inId: LocalId });
     res.json(LocalFromRepo);
 };
 

@@ -1,7 +1,7 @@
-import { StartFunc as StartFuncwriteFile } from '../../kLowDb/WriteFileList/DeleteFile.js';
+import { StartFunc as StartFuncwriteFile } from '../../kSequelize/WriteFileList/DeleteRow.js';
 
-let DeleteFunc = ({ Id }) => {
-    return StartFuncwriteFile({ Id });
+let DeleteFunc = ({ inId }) => {
+    return StartFuncwriteFile({ inId });
 };
 
 export { DeleteFunc };
