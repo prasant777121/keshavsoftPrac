@@ -1,6 +1,13 @@
 import { DeleteFunc as DeleteFuncDal } from '../../dals/DeleteFuncs/EntryFile.js';
+import { DeleteFunc as DeleteSequelizeFuncDal } from '../../dalsForSequelize/DeleteFuncs/EntryFile.js';
 
-let DeleteFunc = ({ inId }) => {
+import configJson from '../../../Config.json' assert { type: 'json' };
+
+let DeleteFunc = async ({ inId }) => {
+    if (configJson.isSequelize) {
+        return await DeleteSequelizeFuncDal({inId});
+    };
+
     return DeleteFuncDal({ inId });
 };
 
