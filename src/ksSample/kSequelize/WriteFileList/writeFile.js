@@ -1,26 +1,14 @@
-import { Sequelize, DataTypes } from "sequelize";
+import { dataColumns } from '../modals/prepareColumns.js';
 
 import { ClassSample } from '../../ModalClass.js';
-import Configjson from '../../../Config.json' assert { type: 'json' };
-
-let commonJonPth = Configjson.JsonPath;
-let commonDbName = Configjson.DbName;
-
+import { StartFunc as StartFuncInitializeSequelize } from '../modals/initializeSequelize.js';
 
 let StartFunc = async ({ inDataToInsert }) => {
     let localInDataToInsert = new ClassSample(inDataToInsert);
 
-    const sequelize = new Sequelize({
-        dialect: 'sqlite',
-        storage: `${commonJonPth}/${commonDbName}`, // You can specify the path for your SQLite database file
-    });
+    const sequelize = StartFuncInitializeSequelize();
 
-    const Tickets = sequelize.define('sample', {
-        Name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
-    }, { freezeTableName: true }
+    const Tickets = sequelize.define('sample', dataColumns, { freezeTableName: true }
     );
 
     const users = await Tickets.findAll();
