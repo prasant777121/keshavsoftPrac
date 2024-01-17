@@ -14,7 +14,6 @@ let StartFunc = async () => {
         storage: `${commonDbName}` // You can specify the path for your SQLite database file
     });
 
-
     const Tickets = sequelize.define('sample', dataColumns, { freezeTableName: true }
     );
 
