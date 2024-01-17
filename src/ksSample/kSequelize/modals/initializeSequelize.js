@@ -5,7 +5,10 @@ let commonJonPth = Configjson.JsonPath;
 let commonDbName = Configjson.DbName;
 
 let StartFunc = () => {
-    let LocalPassword = process.env.KS_EMAIL_PUBLIC;
+    if ("KS_SQLITE_PASSWORD" in process.env === false) {
+        console.log("KS_SQLITE_PASSWORD not found in .env file")        
+    }
+    let LocalPassword = process.env.KS_SQLITE_PASSWORD;
 
     const sequelize = new Sequelize("database", "", LocalPassword, {
         dialect: 'sqlite',

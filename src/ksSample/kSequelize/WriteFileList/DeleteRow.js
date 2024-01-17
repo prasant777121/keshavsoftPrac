@@ -1,18 +1,11 @@
-import { Sequelize, DataTypes } from "sequelize";
-
-import Configjson from '../../../Config.json' assert { type: 'json' };
-
-let commonJonPth = Configjson.JsonPath;
-let commonDbName = Configjson.DbName;
+import { DataTypes } from "sequelize";
+import { StartFunc as StartFuncInitializeSequelize } from '../modals/initializeSequelize.js';
 
 
 let StartFunc = async ({inId}) => {
     let LocalId=inId;
 
-    const sequelize = new Sequelize({
-        dialect: 'sqlite',
-        storage: `${commonJonPth}/${commonDbName}`, // You can specify the path for your SQLite database file
-    });
+    const sequelize = StartFuncInitializeSequelize();
 
     const Tickets = sequelize.define('sample', {
         Name: {
