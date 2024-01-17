@@ -6,21 +6,25 @@ let commonJonPth = Configjson.JsonPath;
 let commonDbName = Configjson.DbName;
 
 let StartFunc = async () => {
-    const sequelize = new Sequelize({
-        dialect: 'sqlite',
-        storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
-    });
+    try {
+        const sequelize = new Sequelize({
+            dialect: 'sqlite',
+            storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
+        });
 
-    const Tickets = sequelize.define('sample', dataColumnsKData/JSON/316/readFile.js, { freezeTableName: true }
-    );
+        const Tickets = sequelize.define('sample', dataColumns, { freezeTableName: true }
+        );
 
-    const users = await Tickets.findAll();
+        const users = await Tickets.findAll();
 
-    const records = users.map(function (result) {
-        return result.dataValues
-    });
+        const records = users.map(function (result) {
+            return result.dataValues
+        });
 
-    return await records;
+        return await records;
+    } catch (error) {
+        return await error;
+    };
 };
 
 let StartFunc_15Jan2024 = async () => {

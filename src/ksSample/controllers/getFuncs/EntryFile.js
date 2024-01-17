@@ -8,11 +8,13 @@ import {
 
 let GetFunc = async (req, res) => {
     let LocalFromRepo = await GetFuncRepo();
+
     res.json(LocalFromRepo);
 };
 
 let GetDataOnlyFunc = async (req, res) => {
     let LocalFromRepo = await GetDataOnlyFuncRepo();
+
     res.json(LocalFromRepo);
 };
 let GetIdFunc = (req, res) => {
