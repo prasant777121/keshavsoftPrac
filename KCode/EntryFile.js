@@ -7,6 +7,7 @@ import { StartFunc as StartFuncCopyDatas } from './CopyDatas/EntryFile.js';
 import { StartFunc as StartFuncForkLowDb } from './ForkLowDb/EntryFile.js';
 import { StartFunc as StartFuncForDataJson } from './ForDataJson.js';
 import { StartFunc as StartFuncForRestClients } from './ForRestClients/EntryFile.js';
+import { StartFunc as StartFuncForSequelize } from './ForSequelize/EntryFile.js';
 
 let CommonFromFolderName = "FromData";
 let CommonRoutes = [];
@@ -46,6 +47,11 @@ let StartFunc = ({ inFilesArray }) => {
         };
 
         StartFuncForkLowDb({
+            inElement: element.FileName, inColumnsArray: element.Columns,
+            inFrom: CommonFrom, inTo: CommonTo
+        });
+
+        StartFuncForSequelize({
             inElement: element.FileName, inColumnsArray: element.Columns,
             inFrom: CommonFrom, inTo: CommonTo
         });

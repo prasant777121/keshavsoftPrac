@@ -1,15 +1,12 @@
-import { Sequelize, DataTypes } from "sequelize";
+import { Sequelize } from "sequelize";
 import { dataColumns } from './modals/prepareColumns.js';
-
-import columnsJson from './modals/columns.json' assert {type: 'json'};
-
 import dotenv from 'dotenv';
 dotenv.config();
 
 let commonDbName = `sample.db`
 
 let StartFunc = async () => {
-    let LocalPassword = process.env.KS_SQLITE_PASSWORD;
+    let LocalPassword = process.env.KS_EMAIL_PUBLIC;
 
     const sequelize = new Sequelize("database", "", LocalPassword, {
         dialect: 'sqlite',
@@ -17,15 +14,12 @@ let StartFunc = async () => {
         storage: `${commonDbName}` // You can specify the path for your SQLite database file
     });
 
-    columnsJson.Name.type = DataTypes.STRING;
-    columnsJson.Mobile.type = DataTypes.NUMBER;
-
-    sequelize.define('sample', columnsJson, { freezeTableName: true }
+    sequelize.define('sample', dataColumns, { freezeTableName: true }
     );
 
     sequelize.sync({ force: true });
 };
 
-StartFunc().then();
+StartFunc();
 
 // export { StartFunc };
