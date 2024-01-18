@@ -16,7 +16,7 @@ let PostFunc = async (req, res) => {
     let LocalBody = req.body;
     let LocalModalObject = new ClassSample({ ...LocalBody });
 
-    let LocalFromRepo =await PostFuncRepo({ ...LocalModalObject });
+    let LocalFromRepo = await PostFuncRepo({ ...LocalModalObject });
     res.json(LocalFromRepo);
 };
 
@@ -30,9 +30,20 @@ let PostFromModalFunc = (req, res) => {
 
 let PostUploadFunc = (req, res) => {
     let LocalBodyData = req.body;
+    let LocalModalObject = LocalFromArray({ inArray: LocalBodyData });
 
-    let LocalFromRepo = PostUploadFuncRepo({ LocalBodyAsModal: LocalBodyData });
+    let LocalFromRepo = PostUploadFuncRepo({ LocalBodyAsModal: LocalModalObject });
     res.json(LocalFromRepo);
+};
+
+let LocalFromArray = ({ inArray }) => {
+    let LocalNewAray = [];
+
+    LocalNewAray = inArray.map(element => {
+        return new ClassSample({ ...element });
+    });
+
+    return LocalNewAray;
 };
 
 let PostUploadFromModalFunc = (req, res) => {

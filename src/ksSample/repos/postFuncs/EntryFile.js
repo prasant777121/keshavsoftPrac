@@ -6,7 +6,7 @@ import {
 } from '../../dals/postFuncs/EntryFile.js';
 
 import {
-    PostFunc as PostFuncDalsForSequelize
+    PostFunc as PostFuncDalsForSequelize, PostUploadFromModalFunc as PostUploadFromModalFuncDalsForSequelize
 } from '../../dalsForSequelize/postFuncs/EntryFile.js';
 
 import configJson from '../../../Config.json' assert { type: 'json' };
@@ -27,7 +27,11 @@ let PostUploadFunc = ({ LocalBodyAsModal }) => {
     return PostUploadFuncDal({ LocalBodyAsModal });
 };
 
-let PostUploadFromModalFunc = ({ LocalBodyAsModal }) => {
+let PostUploadFromModalFunc = async ({ LocalBodyAsModal }) => {
+    if (configJson.isSequelize) {
+        return await PostUploadFromModalFuncDalsForSequelize({ inDataToInsert: LocalBodyAsModal });
+    };
+
     return PostUploadFromModalFuncDal({ LocalBodyAsModal });
 };
 

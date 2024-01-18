@@ -1,21 +1,17 @@
 import fs from 'fs';
 
 let StartFunc = ({ inElement, inColumnsArray, inFrom, inTo }) => {
-    let LocalElement = inElement;
-    let LocalTypeName = "kSequelize/modals";
-    let LocalFrom = inFrom;
-    let LocalTo = inTo;
-    let LocalSampleString = "ksSample";
+  let LocalFileName = "Config.json";
+  let LocalFrom = inFrom;
+  let LocalTo = inTo;
 
-    let LocalFileData = fs.readFileSync(`${LocalTo}/${LocalElement}/${LocalTypeName}/${LocalFileName}`);
-    let LocalfileNameJsonData = JSON.parse(LocalFileData);
+  fs.copyFileSync(`${CommonFrom}/Config.json`, `${CommonTo}/Config.json`);
 
-    let LocalFileData1 = fs.readFileSync(`${LocalTo}/${LocalElement}/${LocalTypeName}/prepareColumns.js`);
+  let LocalFileData = fs.readFileSync(`${LocalFrom}/${LocalFileName}`);
+  let LocalfileNameJsonData = JSON.parse(LocalFileData);
+  LocalfileNameJsonData.DbName = "data.db";
 
-    console.log("LocalfileNameJsonData : ",LocalfileNameJsonData);
-  //  LocalfileNameJsonData.fileName = `${LocalElement}.json`;
-
-    fs.writeFileSync(`${LocalTo}/${LocalElement}/${LocalTypeName}/prepareColumns.js`, JSON.stringify(LocalfileNameJsonData));
+  fs.writeFileSync(`${LocalTo}/${LocalFileName}`, JSON.stringify(LocalfileNameJsonData));
 };
 
 export { StartFunc };
