@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read User Data</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Read User Data</h1>
+
+    <!-- Dropdown to select usernames -->
+    <label for="userDropdown">Select User:</label>
+    <select id="userDropdown" onchange="getUserDataAndPopulateForm()">
+        <!-- Options will be dynamically populated via JavaScript -->
+    </select>
+
+    <!-- Display selected username and password -->
+    <div id="userDataDisplay"></div>
+
+    <!-- Link to the insert page -->
+    <a href="insert.html">Go to Insert Page</a>
+</body>
+</html>
