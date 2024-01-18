@@ -7,9 +7,10 @@ import { StartFunc as StartFuncCopyDatas } from './CopyDatas/EntryFile.js';
 import { StartFunc as StartFuncForkLowDb } from './ForkLowDb/EntryFile.js';
 import { StartFunc as StartFuncForDataJson } from './ForDataJson.js';
 import { StartFunc as StartFuncForRestClients } from './ForRestClients/EntryFile.js';
-import { StartFunc as StartFuncForSequelize } from './ForSequelize/EntryFile.js';
+// import { StartFunc as StartFuncForSequelize } from './ForSequelize/EntryFile.js';
 import { StartFunc as StartFuncForConfigJson } from './ForConfigJson/EntryFile.js';
 import { StartFunc as StartFuncForModalClass } from './ForModalClass/EntryFile.js';
+import { StartFunc as StartFuncFortableNameJson } from './FortableNameJson/EntryFile.js';
 
 let CommonFromFolderName = "FromData";
 let CommonRoutes = [];
@@ -57,10 +58,10 @@ let StartFunc = ({ inFilesArray }) => {
             inFrom: CommonFrom, inTo: CommonTo
         });
 
-        StartFuncForSequelize({
-            inElement: element.FileName, inColumnsArray: element.Columns,
-            inFrom: CommonFrom, inTo: CommonTo
-        });
+        // StartFuncForSequelize({
+        //     inElement: element.FileName, inColumnsArray: element.Columns,
+        //     inFrom: CommonFrom, inTo: CommonTo
+        // });
 
         StartFuncForDataJson({
             inElement: element.FileName, inColumnsArray: element.Columns,
@@ -77,6 +78,11 @@ let StartFunc = ({ inFilesArray }) => {
         });
 
         StartFuncForConfigJson({
+            inElement: element.FileName, inColumnsArray: element.Columns,
+            inFrom: CommonFrom, inTo: CommonTo
+        });
+
+        StartFuncFortableNameJson({
             inElement: element.FileName, inColumnsArray: element.Columns,
             inFrom: CommonFrom, inTo: CommonTo
         });
