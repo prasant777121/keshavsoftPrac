@@ -9,6 +9,7 @@ import { StartFunc as StartFuncForDataJson } from './ForDataJson.js';
 import { StartFunc as StartFuncForRestClients } from './ForRestClients/EntryFile.js';
 import { StartFunc as StartFuncForSequelize } from './ForSequelize/EntryFile.js';
 import { StartFunc as StartFuncForConfigJson } from './ForConfigJson/EntryFile.js';
+import { StartFunc as StartFuncForModalClass } from './ForModalClass/EntryFile.js';
 
 let CommonFromFolderName = "FromData";
 let CommonRoutes = [];
@@ -46,6 +47,11 @@ let StartFunc = ({ inFilesArray }) => {
             console.log(error.message);
         };
 
+        StartFuncForModalClass({
+            inElement: element.FileName, inColumnsArray: element.Columns,
+            inFrom: CommonFrom, inTo: CommonTo
+        });
+
         StartFuncForkLowDb({
             inElement: element.FileName, inColumnsArray: element.Columns,
             inFrom: CommonFrom, inTo: CommonTo
@@ -74,7 +80,7 @@ let StartFunc = ({ inFilesArray }) => {
             inElement: element.FileName, inColumnsArray: element.Columns,
             inFrom: CommonFrom, inTo: CommonTo
         });
-        
+
         // fs.copyFileSync(`${CommonFrom}/Config.json`, `${CommonTo}/Config.json`);
     });
 };

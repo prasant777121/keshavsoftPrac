@@ -1,7 +1,6 @@
 class ClassSample {
-    constructor({ Name, Mobile }) {
+    constructor({ Name }) {
         this.Name = Name;
-        this.Mobile = Mobile;
     };
 };
 

@@ -1,23 +1,12 @@
-import { dataColumns } from '../modals/prepareColumns.js';
-
-import { ClassSample } from '../../ModalClass.js';
-import { StartFunc as StartFuncInitializeSequelize } from '../modals/initializeSequelize.js';
+import { ColumnsPullFunc } from '../../DataColumns.js';
+import { StartFunc as StartFuncInitializeSequelizeWithTableName } from '../modals/initializeSequelizeWithTableName.js';
 
 let StartFunc = async ({ inDataToInsert }) => {
-    let localInDataToInsert = new ClassSample(inDataToInsert);
+    let localInDataToInsert = ColumnsPullFunc()(inDataToInsert);
 
-    const sequelize = StartFuncInitializeSequelize();
+    const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
 
-    const Tickets = sequelize.define('sample', dataColumns, { freezeTableName: true }
-    );
-
-    const users = await Tickets.findAll();
-
-    const records = users.map(function (result) {
-        return result.dataValues
-    })
-
-    const LocalFromBuild = Tickets.build(localInDataToInsert);
+    const LocalFromBuild = LocalTableData.build(localInDataToInsert);
 
     let localNewAfterSave = await LocalFromBuild.save();
 

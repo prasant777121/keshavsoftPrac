@@ -16,11 +16,21 @@ let StartFunc = async () => {
         storage: `${commonDbName}` // You can specify the path for your SQLite database file
     });
 
-    columnsJson.Name.type = DataTypes.STRING;
-    columnsJson.Mobile.type = DataTypes.NUMBER;
-
-    sequelize.define('sample', columnsJson, { freezeTableName: true }
-    );
+    columnsJson.forEach(element => {
+        Object.entries(element.tableColumns).forEach(
+            ([key, value]) => {
+                if (value.type==="STRING") {
+                    value.type = DataTypes.STRING;
+                };
+            
+                if (value.type==="NUMBER") {
+                    value.type = DataTypes.NUMBER;
+                };
+            }
+        );
+      
+        sequelize.define(element.tableName, element.tableColumns, { freezeTableName: true });
+    });
 
     sequelize.sync({ force: true });
 };

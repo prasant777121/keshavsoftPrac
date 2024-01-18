@@ -5,8 +5,6 @@ let StartFunc = ({ inElement, inColumnsArray, inFrom, inTo }) => {
   let LocalFrom = inFrom;
   let LocalTo = inTo;
 
-  fs.copyFileSync(`${CommonFrom}/Config.json`, `${CommonTo}/Config.json`);
-
   let LocalFileData = fs.readFileSync(`${LocalFrom}/${LocalFileName}`);
   let LocalfileNameJsonData = JSON.parse(LocalFileData);
   LocalfileNameJsonData.DbName = "data.db";

@@ -21,8 +21,8 @@ let LocalFuncForreadFile = ({ inElement, inTo, inTypeName }) => {
 
     let LocalFileData1 = fs.readFileSync(`${LocalTo}/${LocalElement}/${LocalTypeName}/prepareColumns.js`);
 
-    console.log("LocalfileNameJsonData : ",LocalfileNameJsonData);
-  //  LocalfileNameJsonData.fileName = `${LocalElement}.json`;
+    console.log("LocalfileNameJsonData : ", LocalfileNameJsonData);
+    //  LocalfileNameJsonData.fileName = `${LocalElement}.json`;
 
     fs.writeFileSync(`${LocalTo}/${LocalElement}/${LocalTypeName}/prepareColumns.js`, JSON.stringify(LocalfileNameJsonData));
 };
@@ -58,6 +58,6 @@ let StartFunc = async () => {
     sequelize.sync({ force: true });
 };
 
-StartFunc().then();
+// StartFunc().then();
 
-// export { StartFunc };
+export { StartFunc };
