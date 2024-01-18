@@ -1,9 +1,24 @@
-import { dataColumns } from '../modals/prepareColumns.js';
+// import { dataColumns } from '../modals/prepareColumns.js';
+// import { StartFunc as StartFuncInitializeSequelizeWithTableName } from '../modals/initializeSequelizeWithTableName.js';
 
-import { ClassSample } from '../../ModalClass.js';
-import { StartFunc as StartFuncInitializeSequelize } from '../modals/initializeSequelize.js';
+// import { ClassSample } from '../../ModalClass.js';
+// import { StartFunc as StartFuncInitializeSequelize } from '../modals/initializeSequelize.js';
+
+import { StartFunc as StartFuncInitializeSequelizeWithTableName } from '../modals/initializeSequelizeWithTableName.js';
 
 let StartFunc = async ({ inDataToInsert }) => {
+
+    const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
+
+    const LocalFromBuild = LocalTableData.bulkCreate(inDataToInsert);
+
+    // let localNewAfterSave = await LocalFromBuild.save();
+
+    return await LocalFromBuild;
+};
+
+
+let StartFunc1 = async ({ inDataToInsert }) => {
     let localInDataToInsert = LocalFromArray({ inArray: inDataToInsert });
 
     const sequelize = StartFuncInitializeSequelize();
