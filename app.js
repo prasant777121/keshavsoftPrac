@@ -1,6 +1,5 @@
 import { StartFunc as StartFuncPortListen } from "./PortListen.js";
 
-// k
 import { router as routerbinByPath } from "./bin/routes.js";
 
 import { router as routerboilerPlate } from "./boilerPlate/config.js";

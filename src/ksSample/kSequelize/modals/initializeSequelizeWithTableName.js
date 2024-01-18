@@ -1,6 +1,5 @@
 import { Sequelize, DataTypes } from "sequelize";
 import Configjson from '../../../Config.json' assert { type: 'json' };
-import ColumnsJson from './columns.json' assert { type: 'json' };
 import tableNameJson from '../../tableName.json' assert { type: 'json' };
 
 let commonJonPth = Configjson.JsonPath;
@@ -8,6 +7,7 @@ let commonDbName = Configjson.DbName;
 
 let StartFunc = async () => {
     let LocalTableName = tableNameJson.tableName;
+    let LocaltableAndColumns = Configjson.sequelizeConfig.tableAndColumns;
 
     if ("KS_SQLITE_PASSWORD" in process.env === false) {
         console.log("KS_SQLITE_PASSWORD not found in .env file")
@@ -20,7 +20,7 @@ let StartFunc = async () => {
         storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
     });
 
-    let LocalColumnsNeeded = ColumnsJson.find(element => element.tableName === LocalTableName);
+    let LocalColumnsNeeded = LocaltableAndColumns.find(element => element.tableName === LocalTableName);
 
     Object.entries(LocalColumnsNeeded.tableColumns).forEach(
         ([key, value]) => {

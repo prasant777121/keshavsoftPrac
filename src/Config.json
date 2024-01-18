@@ -1,5 +1,18 @@
 {
     "JsonPath": "KData/JSON/316",
     "DbName": "sample.db",
-    "isSequelize": true
+    "isSequelize": true,
+    "sequelizeConfig": {
+        "tableAndColumns": [
+            {
+                "tableName": "sample",
+                "tableColumns": {
+                    "Name": {
+                        "type": "STRING",
+                        "allowNull": false
+                    }
+                }
+            }
+        ]
+    }
 }

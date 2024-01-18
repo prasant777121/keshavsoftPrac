@@ -1,47 +1,13 @@
-import fs from 'fs';
-
-let StartFunc = ({ inElement, inColumnsArray, inFrom, inTo }) => {
-    let LocalElement = inElement;
-    let LocalTypeName = "kSequelize/modals";
-    let LocalFrom = inFrom;
-    let LocalTo = inTo;
-    let LocalSampleString = "ksSample";
-
-    LocalFuncForreadFile({ inElement: LocalElement, inTo: LocalTo, inFrom: LocalFrom, inTypeName: LocalTypeName, inSampleString: LocalSampleString });
-};
-
-let LocalFuncForreadFile = ({ inElement, inTo, inTypeName }) => {
-    let LocalFileName = "columns.json";
-    let LocalElement = inElement;
-    let LocalTypeName = inTypeName;
-    let LocalTo = inTo;
-
-    let LocalFileData = fs.readFileSync(`${LocalTo}/${LocalElement}/${LocalTypeName}/${LocalFileName}`);
-    let LocalfileNameJsonData = JSON.parse(LocalFileData);
-
-    let LocalFileData1 = fs.readFileSync(`${LocalTo}/${LocalElement}/${LocalTypeName}/prepareColumns.js`);
-
-    console.log("LocalfileNameJsonData : ", LocalfileNameJsonData);
-    //  LocalfileNameJsonData.fileName = `${LocalElement}.json`;
-
-    fs.writeFileSync(`${LocalTo}/${LocalElement}/${LocalTypeName}/prepareColumns.js`, JSON.stringify(LocalfileNameJsonData));
-};
-
-export { StartFunc };
-
-
 import { Sequelize, DataTypes } from "sequelize";
-import { dataColumns } from './modals/prepareColumns.js';
-
-import columnsJson from './modals/columns.json' assert {type: 'json'};
 
 import dotenv from 'dotenv';
 dotenv.config();
 
-let commonDbName = `sample.db`
+let commonDbName = `KData/JSON/316/data.db`
 
-let StartFunc = async () => {
+let StartFunc = async ({ inColumnsJson }) => {
     let LocalPassword = process.env.KS_SQLITE_PASSWORD;
+    let LocalColumnsJson = inColumnsJson;
 
     const sequelize = new Sequelize("database", "", LocalPassword, {
         dialect: 'sqlite',
@@ -49,15 +15,23 @@ let StartFunc = async () => {
         storage: `${commonDbName}` // You can specify the path for your SQLite database file
     });
 
-    columnsJson.Name.type = DataTypes.STRING;
-    columnsJson.Mobile.type = DataTypes.NUMBER;
+    LocalColumnsJson.forEach(element => {
+        Object.entries(element.tableColumns).forEach(
+            ([key, value]) => {
+                if (value.type === "STRING") {
+                    value.type = DataTypes.STRING;
+                };
 
-    sequelize.define('sample', columnsJson, { freezeTableName: true }
-    );
+                if (value.type === "NUMBER") {
+                    value.type = DataTypes.NUMBER;
+                };
+            }
+        );
+
+        sequelize.define(element.tableName, element.tableColumns, { freezeTableName: true });
+    });
 
     sequelize.sync({ force: true });
 };
-
-// StartFunc().then();
 
 export { StartFunc };
