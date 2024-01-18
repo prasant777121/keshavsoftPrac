@@ -5,7 +5,7 @@ let StartFunc = ({ inElement, inColumnsArray, inFrom, inTo }) => {
   let LocalFrom = inFrom;
   let LocalTo = inTo;
 
-  let LocalFileData = fs.readFileSync(`${LocalFrom}/${inElement}/${LocalFileName}`);
+  let LocalFileData = fs.readFileSync(`${LocalFrom}/ksSample/${LocalFileName}`);
   let LocalfileNameJsonData = JSON.parse(LocalFileData);
   LocalfileNameJsonData.tableName = inElement;
 
