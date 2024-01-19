@@ -4,9 +4,7 @@ const StartFunc = () => {
     let ButtonClickId = "RefreshbuttonIn";
     let jVarLocalButtonClass = document.getElementById(ButtonClickId);
 
-        jVarLocalButtonClass.addEventListener("click", (event) => {
-            StartFuncButtonClickFunc({ inevent: event })
-        });
-    };
+    jVarLocalButtonClass.addEventListener("click", StartFuncButtonClickFunc);
+};
 
 export { StartFunc };
