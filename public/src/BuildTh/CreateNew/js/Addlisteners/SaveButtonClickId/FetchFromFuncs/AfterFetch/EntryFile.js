@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    window.location.href = "table.html";
+    window.location.href = "../Table/table.html";
 };
 
 export { StartFunc }
