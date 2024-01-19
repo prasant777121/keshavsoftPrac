@@ -1,6 +1,12 @@
 import { StartFunc as StartFuncFetchFunc } from "./DeleteButton/FetchFunc.js";;
+let CommonTableColumns;
 
 let StartFunc = ({ inFromFetch }) => {
+    LocalColumns({ inFromFetch });
+    jFLocalShowTable();
+};
+
+let jFLocalShowTable = () => {
     var $table = $('#table');
 
     $table.bootstrapTable('destroy');
@@ -10,14 +16,12 @@ let StartFunc = ({ inFromFetch }) => {
             $(".fixed-table-toolbar .search .search-input").focus()
         },
         onClickRow: LocalOnClickRow,
-        columns: LocalColumns({ inFromFetch })
+        columns: CommonTableColumns
     });
-
 };
 
-let LocalOnClickRow = async (row, $element, field) => {   
-    console.log("Row---", row,field,$element); 
-    if (field === 2) {
+let LocalOnClickRow = async (row, $element, field) => {
+    if (field === 0) {
         let LocalFromSwal = await swal.fire({
             title: "Are you sure?",
             text: "You will not be able to recover this imaginary file!",
@@ -28,50 +32,35 @@ let LocalOnClickRow = async (row, $element, field) => {
         });
 
         if (LocalFromSwal.isConfirmed) {
-
             let LocalFromDeleteFetch;
+
             if ("UuId" in row) {
                 LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.UuId });
             } else {
                 LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.id });
-                
-            }
-
-            console.log("LocalFromDeleteFetch", LocalFromDeleteFetch);
-
-            if (LocalFromDeleteFetch) {
-                var $table = $('#table');
-
-                $table.bootstrapTable('destroy');
-
-                $table.bootstrapTable({
-                    onPostBody: function () {
-                        $(".fixed-table-toolbar .search .search-input").focus()
-                    },
-                    onClickRow: LocalOnClickRow
-                });
-
             };
 
+            if (LocalFromDeleteFetch) {
+                jFLocalShowTable();
+            };
         };
-
-        // console.log("aaaaa", row, $element, field, field === 2);
     };
 };
+
 const LocalColumns = ({ inFromFetch }) => {
     let LocalColumnsKeysArray = Object.keys(inFromFetch[0]);
-    console.log("inFromFetch", LocalColumnsKeysArray);
+    let JVarLocalColumnsArray = [];
+
     JVarLocalColumnsArray.push({ title: "Delete", formatter: "operateFormatter" })
 
-    let JVarLocalColumnsArray = LocalColumnsKeysArray.map(element => {
+    JVarLocalColumnsArray.push(...LocalColumnsKeysArray.map(element => {
         let LocalObj = {};
         LocalObj.field = element;
         LocalObj.title = element;
         return LocalObj
+    }));
 
-    });
-
-    return JVarLocalColumnsArray;
+    CommonTableColumns = JVarLocalColumnsArray;
 }
 
 export { StartFunc };
