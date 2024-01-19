@@ -12,6 +12,8 @@ import { StartFunc as StartFuncForConfigJson } from './ForConfigJson/EntryFile.j
 import { StartFunc as StartFuncForModalClass } from './ForModalClass/EntryFile.js';
 import { StartFunc as StartFuncFortableNameJson } from './FortableNameJson/EntryFile.js';
 
+import { StartFunc as StartFuncForFrontEnd } from './ForFrontEnd/ForPublic/EntryFile.js';
+
 let CommonFromFolderName = "FromData";
 let CommonRoutes = [];
 
@@ -33,6 +35,8 @@ let StartFunc = ({ inFilesArray }) => {
     let CommonTo = "bin";
 
     StartFuncBaseDirs();
+
+    StartFuncForFrontEnd({ inFilesArray: LocalFilesArray });
 
     StartFuncForRoutesFile({
         inEndPointsArray: LocalFilesArray.map(element => element.FileName),
