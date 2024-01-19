@@ -156,6 +156,7 @@
         function jFGlobalSerialColumn(value, row, index) {
             return index + 1;
         };
+
         function operateFormatter(value, row, index) {
             return [
                 `<a class=" DeleteButtonClass" href="#" data-UuId="${row.UuId}" title="Delete">`,
@@ -164,9 +165,7 @@
                 '</svg>',
                 '</a>  '
             ].join('')
-        }
-
-
+        };
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>

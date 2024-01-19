@@ -4,7 +4,7 @@ const StartFunc = () => {
     var $table = $('#table');
     let jVarLocalTableData = localStorage.getItem("tableData");
     let jVarLocalTableDataParsed = JSON.parse(jVarLocalTableData);
-
+    console.log("jVarLocalTableDataParsed : ", jVarLocalTableDataParsed);
     $table.bootstrapTable('destroy');
 
     $table.bootstrapTable({
@@ -29,6 +29,7 @@ let LocalOnClickRow = async (row, $element, field) => {
         });
 
         if (LocalFromSwal.isConfirmed) {
+            console.log("row : ", row);
             if ("UuId" in row) {
                 StartFuncFetchFunc({ inUuId: row.UuId });
             } else {
