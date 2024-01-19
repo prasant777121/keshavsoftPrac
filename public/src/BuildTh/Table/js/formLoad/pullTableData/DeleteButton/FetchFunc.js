@@ -1,9 +1,6 @@
-import { StartFunc as StartFuncCommonCode } from "../RefreshButtonClick/CommonCode/ShowTable.js";
-
 let StartFunc = async ({ inUuId }) => {
-    let LocalinUuId = inUuId;
 
-    let jVarLocalFetchUrl = `/src/ksSample/${LocalinUuId}`;
+    let jVarLocalFetchUrl = `/src/ksSample/${inUuId}`;
     let jVarFromFetch = await fetch(jVarLocalFetchUrl, {
         method: 'DELETE',
         headers: {
@@ -12,9 +9,10 @@ let StartFunc = async ({ inUuId }) => {
         },
         body: ''
     });
-    if (jVarFromFetch.status === 200) {
-        StartFuncCommonCode();
-    };
+
+    let data = await jVarFromFetch.json();
+
+    return await data;
 };
 
 
