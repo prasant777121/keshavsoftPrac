@@ -1,13 +1,13 @@
-let StartFunc = async ({ inBodyData }) => {
+let StartFunc = async ({ UuId }) => {
 
-    let jVarLocalFetchUrl = `/projects/Ticketing/Tickets/Upload`;
+    let jVarLocalFetchUrl = `/bin/sample/${UuId}`;
     let jVarFromFetch = await fetch(jVarLocalFetchUrl, {
-        method: 'POST',
+        method: 'DELETE',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(inBodyData)
+        body: ''
     });
 
     let data = await jVarFromFetch.json();
