@@ -1,7 +1,9 @@
 import express from "express";
 import fs from "fs";
 
-import { StartFunc as StartFuncSeq } from "../src/ksSample/kSequelize/Config/TableNames.js";
+// import { StartFunc as StartFuncSeq } from "../src/ksSample/kSequelize/Config/TableNames.js";
+
+import { StartFunc as StartFuncSeq } from "../src/kSequelize/TableNames.js";
 
 import myJson from "../src/Config.json" assert { type: "json" };
 
@@ -10,6 +12,7 @@ var router = express.Router();
 router.get("/files", async (req, res) => {
     if (myJson.isSequelize) {
         let LocalTablesArray = await StartFuncSeq();
+        
         let LocalReturnArray = LocalTablesArray.map(function (element) {
             return element.name;
         });
