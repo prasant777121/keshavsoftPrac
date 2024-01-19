@@ -8,13 +8,17 @@ import myJson from "../src/Config.json" assert { type: "json" };
 var router = express.Router();
 
 router.get("/files", async (req, res) => {
-    if (myJson.isSequelize) {
-        let LocalTablesArray = await StartFuncSeq();
-        let NewLocalTablesArray = LocalTablesArray.find(obj => obj.name);
-        const keys = Object.values(NewLocalTablesArray)
-        res.json(keys);
-        return;
-    }
+
+  if (myJson.isSequelize) {
+    let LocalTablesArray = await StartFuncSeq();
+    let LocalReturnArray=[];
+    LocalTablesArray.map(function(element){
+        LocalReturnArray.push(element.name);
+    })
+
+    res.json(LocalReturnArray);
+    return;
+  }
 
     let LocalFilesArray = LocalFuncForFiles();
 
