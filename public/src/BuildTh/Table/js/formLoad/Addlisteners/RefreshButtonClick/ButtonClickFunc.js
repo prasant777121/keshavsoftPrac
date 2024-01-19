@@ -1,17 +1,11 @@
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
+import { StartFunc as StartFuncFetchFunc } from "./FetchFunc.js";
 
 let StartFunc = async () => {
-    let jVarLocalFetchData = await LocalFetchFiles();
+    let jVarLocalFetchData = await StartFuncFetchFunc();
 
     StartFuncAfterFetch({ inFromFetch: jVarLocalFetchData });
 };
 
-let LocalFetchFiles = async () => {
-    let jVarLocalFetchUrl = "/src/ksSample/DataOnly";
-    let response = await fetch(jVarLocalFetchUrl);
-    let data = await response.json();
-
-    return data;
-};
 
 export { StartFunc };

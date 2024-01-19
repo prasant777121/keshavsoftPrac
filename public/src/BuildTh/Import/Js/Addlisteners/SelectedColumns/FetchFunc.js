@@ -1,7 +1,10 @@
-let StartFunc = async ({ inBodyData }) => {
+import ConfigJson from "../../Config.json" assert { type: "json" };
 
-    // let jVarLocalFetchUrl = `/api/Tickets/Upload`;
-    let jVarLocalFetchUrl = `/src/ksSample/UploadFromModal`;
+let StartFunc = async ({ inBodyData }) => {
+    let LocalroutePath = ConfigJson.routePath;
+    let LocaltableName = ConfigJson.tableName;
+
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/UploadFromModal`;
     let jVarFromFetch = await fetch(jVarLocalFetchUrl, {
         method: 'POST',
         headers: {

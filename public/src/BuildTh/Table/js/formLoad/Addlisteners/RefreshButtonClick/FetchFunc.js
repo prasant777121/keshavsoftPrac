@@ -1,63 +1,14 @@
-let StartFunc = async ({ UuId }) => {
+import ConfigJson from "../../../Config.json" assert { type: "json" };
 
-    let jVarLocalFetchUrl = `/bin/sample/${UuId}`;
-    let jVarFromFetch = await fetch(jVarLocalFetchUrl, {
-        method: 'DELETE',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: ''
-    });
+let StartFunc = async () => {
+    let LocalroutePath = ConfigJson.routePath;
+    let LocaltableName = ConfigJson.tableName;
 
-    let data = await jVarFromFetch.json();
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/DataOnly`;
+    let response = await fetch(jVarLocalFetchUrl);
+    let data = await response.json();
 
-    return await data;
+    return data;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let StartFunc = async ({ inBodyData }) => {
-//     let jVarLocalBodyData = inBodyData;
-
-//     let jVarLocalFetchUrl = `/${ApiConfigJson.ProjectName}/Api/Data/FromFolder/FromFile/ScreensFromDisplayJson/Vertical/HtmlCreate/Save`;
-
-//     let jVarLocalFetchHeaderObject = {
-//         method: "post",
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(jVarLocalBodyData)
-//     };
-
-//     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaderObject);
-//     let jVarLocalResponse = await response.json();
-
-//     return jVarLocalResponse;
-// };
-
-export { StartFunc };
+export { StartFunc }
