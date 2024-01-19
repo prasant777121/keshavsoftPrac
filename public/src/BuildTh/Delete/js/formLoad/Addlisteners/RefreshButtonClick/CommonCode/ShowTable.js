@@ -2,9 +2,8 @@ import { StartFunc as StartFuncFetchFunc } from "../../DeleteButton/FetchFunc.js
 
 const StartFunc = () => {
     var $table = $('#table');
-    let jVarLocalTableColumns = localStorage.getItem("TableColumns");
-
-    let jVarLocalParsed = JSON.parse(jVarLocalTableColumns);
+    let jVarLocalTableData = localStorage.getItem("tableData");
+    let jVarLocalTableDataParsed = JSON.parse(jVarLocalTableData);
 
     $table.bootstrapTable('destroy');
 
@@ -13,7 +12,8 @@ const StartFunc = () => {
             $(".fixed-table-toolbar .search .search-input").focus()
         },
         onClickRow: LocalOnClickRow,
-        columns: jVarLocalParsed
+        columns: JFLocalColumns(),
+        data: jVarLocalTableDataParsed
     });
 };
 
@@ -34,9 +34,26 @@ let LocalOnClickRow = async (row, $element, field) => {
             } else {
                 StartFuncFetchFunc({ inUuId: row.id });
             };
-
         };
     };
+};
+
+const JFLocalColumns = () => {
+    let jVarLocalDataFromLocalStorage = localStorage.getItem("tableData");
+
+    let LocalColumnsKeysArray = Object.keys(JSON.parse(jVarLocalDataFromLocalStorage)[0]);
+    let JVarLocalColumnsArray = [];
+
+    JVarLocalColumnsArray.push({ title: "Delete", formatter: "operateFormatter" })
+
+    JVarLocalColumnsArray.push(...LocalColumnsKeysArray.map(element => {
+        let LocalObj = {};
+        LocalObj.field = element;
+        LocalObj.title = element;
+        return LocalObj
+    }));
+
+    return JVarLocalColumnsArray;
 };
 
 export { StartFunc };

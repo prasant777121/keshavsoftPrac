@@ -1,9 +1,11 @@
-import { StartFunc as StartFuncCommonCode } from "../RefreshButtonClick/CommonCode/ShowTable.js";
+import ConfigJson from "../../../Config.json" assert { type: "json" };
 
 let StartFunc = async ({ inUuId }) => {
     let LocalinUuId = inUuId;
+    let LocalroutePath = ConfigJson.routePath;
+    let LocaltableName = ConfigJson.tableName;
 
-    let jVarLocalFetchUrl = `/src/ksSample/${LocalinUuId}`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/${LocalinUuId}`;
     let jVarFromFetch = await fetch(jVarLocalFetchUrl, {
         method: 'DELETE',
         headers: {
@@ -12,54 +14,16 @@ let StartFunc = async ({ inUuId }) => {
         },
         body: ''
     });
+
     if (jVarFromFetch.status === 200) {
-        StartFuncCommonCode();
+        jFLocalCallbuttonClick();
     };
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let StartFunc = async ({ inBodyData }) => {
-//     let jVarLocalBodyData = inBodyData;
-
-//     let jVarLocalFetchUrl = `/${ApiConfigJson.ProjectName}/Api/Data/FromFolder/FromFile/ScreensFromDisplayJson/Vertical/HtmlCreate/Save`;
-
-//     let jVarLocalFetchHeaderObject = {
-//         method: "post",
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(jVarLocalBodyData)
-//     };
-
-//     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaderObject);
-//     let jVarLocalResponse = await response.json();
-
-//     return jVarLocalResponse;
-// };
+const jFLocalCallbuttonClick = () => {
+    let ButtonClickId = "RefreshbuttonIn";
+    let jVarLocalButtonClass = document.getElementById(ButtonClickId);
+    jVarLocalButtonClass.click();
+};
 
 export { StartFunc };
