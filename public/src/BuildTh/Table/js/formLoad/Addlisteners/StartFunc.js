@@ -1,7 +1,7 @@
-import { StartFunc as StartFuncSelectedColumns } from "./RefreshButtonClick/StartFunc.js";
+import { StartFunc as StartFuncRefreshButtonClick } from "./RefreshButtonClick/StartFunc.js";
 
 let StartFunc = () => {
-    StartFuncSelectedColumns();
+    StartFuncRefreshButtonClick();
 };
 
 export { StartFunc };

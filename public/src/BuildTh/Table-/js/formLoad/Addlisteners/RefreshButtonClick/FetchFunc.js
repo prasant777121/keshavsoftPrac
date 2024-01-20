@@ -8,7 +8,7 @@ let StartFunc = async () => {
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 
-    localStorage.setItem("tableData", JSON.stringify(data));
+    return data;
 };
 
-export { StartFunc };
+export { StartFunc }

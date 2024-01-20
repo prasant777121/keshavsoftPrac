@@ -2,9 +2,10 @@ import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
 import { StartFunc as StartFuncFetchFunc } from "./FetchFunc.js";
 
 let StartFunc = async () => {
-    await StartFuncFetchFunc();
+    let jVarLocalFetchData = await StartFuncFetchFunc();
 
-    StartFuncAfterFetch();
+    StartFuncAfterFetch({ inFromFetch: jVarLocalFetchData });
 };
+
 
 export { StartFunc };
