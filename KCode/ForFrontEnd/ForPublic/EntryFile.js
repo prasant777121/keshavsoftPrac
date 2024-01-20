@@ -17,7 +17,12 @@ let StartFunc = ({ inFilesArray }) => {
         };
 
         files.forEach(function (file, index) {
-            walk(`${LocalTo}/${file}`, "", "bin", file, CallBackFunc);
+            fs.stat(`${LocalTo}/${file}`, function (err, stat) {
+                if (stat && stat.isDirectory()) {
+                    console.log("aaaaaaaa : ", `${LocalTo}/${file}`);
+                    walk(`${LocalTo}/${file}`, "", "bin", file, CallBackFunc);
+                };
+            });
         });
     });
 };
