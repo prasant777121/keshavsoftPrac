@@ -2,23 +2,22 @@ import fs from 'fs';
 import { walk, CallBackFunc } from './LoopFiles.js';
 
 let StartFunc = ({ inFilesArray }) => {
-    let LocalFrom = 'public/src'
+    let LocalFrom = 'public/JsonCRUD/src';
+    let LocalTo = 'public/JsonCRUD/bin';
     let LocalFilesArray = inFilesArray;
+    fs.cpSync(LocalFrom, LocalTo, { recursive: true });
 
     LocalFilesArray.forEach(element => {
-        fs.cpSync("public/src", `public/JsonUi/${element.FileName}`, { recursive: true });
-        // walk("public/src", "", "", element, CallBackFunc);
+        fs.cpSync(`${LocalTo}/ksSample`, `${LocalTo}/${element.FileName}`, { recursive: true });
     });
 
-    fs.readdir("public/JsonUi", function (err, files) {
+    fs.readdir(LocalTo, function (err, files) {
         if (err) {
             console.error("Could not list the directory.", err);
         };
 
         files.forEach(function (file, index) {
-            walk(`public/JsonUi/${file}`, "", "bin", file, CallBackFunc);
-
-            // console.error(file);
+            walk(`${LocalTo}/${file}`, "", "bin", file, CallBackFunc);
         });
     });
 };
