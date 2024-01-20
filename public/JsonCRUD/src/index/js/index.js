@@ -14,7 +14,7 @@ let StartFunc = async () => {
 
         // clone.querySelector("a").href += `?fileName=${element}`;
         // clone.querySelector("a").href += `/JsonUi/${element.name}/Menu.html`;
-        clone.querySelector("a").href += `./ksSample/Menu.html`;
+        clone.querySelector("a").href += `./${element.name}/Menu.html`;
 
         return clone;
     });
