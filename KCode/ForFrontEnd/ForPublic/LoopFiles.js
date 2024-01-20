@@ -32,7 +32,7 @@ let CallBackFunc = (err, inFolderPath, inToPath, inTableName, results) => {
     if (err) throw err;
     results.forEach(element => {
         let LoopInsidePath = path.parse(element);
-        console.log("element : ", element);
+        
         if (LoopInsidePath.base === "Config.json") {
             let LocalFileData = fs.readFileSync(element);
             let LocalFileDataParsed = JSON.parse(LocalFileData);
@@ -41,9 +41,6 @@ let CallBackFunc = (err, inFolderPath, inToPath, inTableName, results) => {
             LocalFileDataParsed.tableName = inTableName;
 
             fs.writeFileSync(element, JSON.stringify(LocalFileDataParsed));
-
-            // console.log("LoopInsidePath : ", JSON.parse(LocalFileData));
-
         };
 
     });

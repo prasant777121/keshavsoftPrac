@@ -1,3 +1,5 @@
+import ConfigJson from "./Config.json" assert { type: "json" };
+
 let StartFunc = async () => {
     let jVarLocalHtmlId = document.getElementById("TemplateForCardId");
     let jVarLocalMainId = document.getElementById("MainId");
@@ -23,7 +25,9 @@ let StartFunc = async () => {
 };
 
 let LocalFetchFiles = async () => {
-    let jVarLocalFetchUrl = "/src/tableNames"
+    let LocalRoutePath = ConfigJson.routePath;
+
+    let jVarLocalFetchUrl = `/${LocalRoutePath}/tableNames`;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 
