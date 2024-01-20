@@ -1,5 +1,4 @@
 import { Sequelize, DataTypes } from "sequelize";
-import { dataColumns } from './modals/prepareColumns.js';
 
 import columnsJson from './modals/columns.json' assert {type: 'json'};
 
@@ -20,7 +19,7 @@ let StartFunc = async () => {
     columnsJson.Name.type = DataTypes.STRING;
     columnsJson.Mobile.type = DataTypes.NUMBER;
 
-    sequelize.define('sample', columnsJson, { freezeTableName: true }
+    sequelize.define('ksSample', columnsJson, { freezeTableName: true }
     );
 
     sequelize.sync({ force: true });

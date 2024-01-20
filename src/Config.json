@@ -5,7 +5,7 @@
     "sequelizeConfig": {
         "tableAndColumns": [
             {
-                "tableName": "sample",
+                "tableName": "ksSample",
                 "tableColumns": {
                     "Name": {
                         "type": "STRING",
