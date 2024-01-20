@@ -1,15 +1,16 @@
-import { ColumnsPullFunc } from '../../DataColumns.js';
-import { StartFunc as StartFuncInitializeSequelizeWithTableName } from '../modals/initializeSequelizeWithTableName.js';
+import { ColumnsPullFunc } from "../../DataColumns.js";
+import { StartFunc as StartFuncInitializeSequelizeWithTableName } from "../modals/initializeSequelizeWithTableName.js";
 
-let StartFunc = async ({ inDataToUpdate }) => {
-    let LocalDataToUpdate = ColumnsPullFunc()(inDataToUpdate);
+let StartFunc = async ({ inDataToUpdate, inId }) => {
+  let LocalDataToUpdate = ColumnsPullFunc()(inDataToUpdate);
 
-    const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
+  const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
 
-    const LocalAfterUpdate = await LocalTableData.update(LocalDataToUpdate, { where: { id: 1 } });
+  const LocalAfterUpdate = await LocalTableData.update(LocalDataToUpdate, {
+    where: { id: inId },
+  });
 
-    return await LocalAfterUpdate;
+  return await LocalAfterUpdate;
 };
 
 export { StartFunc };
-

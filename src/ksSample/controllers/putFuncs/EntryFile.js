@@ -1,16 +1,17 @@
-import { ColumnsPullFunc } from '../../DataColumns.js';
+import { ColumnsPullFunc } from "../../DataColumns.js";
 
-import {
-    PutFunc as PutFuncRepo
-} from '../../repos/putFuncs/EntryFile.js';
+import { PutFunc as PutFuncRepo } from "../../repos/putFuncs/EntryFile.js";
 
 let PutFunc = async (req, res) => {
-    let LocalDataToUpdate = ColumnsPullFunc()(req.body);
+  let LocalDataToUpdate = ColumnsPullFunc()(req.body);
 
-    let LocalFromRepo = await PutFuncRepo({ ...LocalDataToUpdate });
-    res.json(LocalFromRepo);
+  let LocalIfFromParam = req.params.id;
+
+  let LocalFromRepo = await PutFuncRepo({
+    inDataToUpdate: LocalDataToUpdate,
+    inId: LocalIfFromParam,
+  });
+  res.json(LocalFromRepo);
 };
 
-export {
-    PutFunc
-};
+export { PutFunc };
