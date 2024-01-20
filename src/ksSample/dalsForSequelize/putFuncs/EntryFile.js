@@ -1,9 +1,7 @@
-import { StartFunc as StartFuncUpdateTableRow } from '../../kSequelize/UpdateTableRow/AllColumns.js';
+import { StartFunc as StartFuncUpdateTableRow } from "../../kSequelize/UpdateTableRow/AllColumns.js";
 
-let PutFunc = async (inModalObject) => {
-    return await StartFuncUpdateTableRow({ inDataToUpdate: inModalObject });
+let PutFunc = async ({ inDataToUpdate, inId }) => {
+  return await StartFuncUpdateTableRow({ inDataToUpdate, inId });
 };
 
-export {
-    PutFunc
-};
+export { PutFunc };
