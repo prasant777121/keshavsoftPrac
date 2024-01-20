@@ -17,11 +17,11 @@ let GetDataOnlyFunc = async (req, res) => {
 
     res.json(LocalFromRepo);
 };
-let GetIdFunc = (req, res) => {
+let GetIdFunc = async (req, res) => {
     let LocalParams = req.params;
     let LocalIfFromParam = LocalParams.id;
 
-    let LocalFromRepo = GetIdFuncRepo({ inId: LocalIfFromParam });
+    let LocalFromRepo = await GetIdFuncRepo({ inId: LocalIfFromParam });
     res.json(LocalFromRepo);
 };
 
