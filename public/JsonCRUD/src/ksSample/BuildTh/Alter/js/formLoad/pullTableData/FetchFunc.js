@@ -5,7 +5,6 @@ let StartFunc = async () => {
     let LocaltableName = ConfigJson.tableName;
     let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
 
-
     let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/${jVarLocalid}`;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
