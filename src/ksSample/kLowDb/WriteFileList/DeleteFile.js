@@ -12,6 +12,7 @@ let StartFunc = ({ inId }) => {
     const db = new LowSync(new JSONFileSync(UserDataFilePath), defaultData);
     db.read();
     let LocalarrayOfObjects = db.data;
+
     let LocalArrayAfterDelete = deleteObjectById({ inCollection: LocalarrayOfObjects, inId: LocalId });
 
     db.data = LocalArrayAfterDelete;

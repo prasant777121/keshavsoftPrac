@@ -6,7 +6,7 @@ POST http://localhost:7016/src/ksSample
 content-type: application/json
 
 {
-"Name":"Naman"
+"Name":"Dhanush"
 }
 
 ### GetSelectColumns
