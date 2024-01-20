@@ -2,6 +2,7 @@ import fs from 'fs';
 import { walk, CallBackFunc } from './LoopFiles.js';
 
 let StartFunc = ({ inFilesArray }) => {
+    let LocalFrom = 'public/src'
     let LocalFilesArray = inFilesArray;
 
     LocalFilesArray.forEach(element => {
