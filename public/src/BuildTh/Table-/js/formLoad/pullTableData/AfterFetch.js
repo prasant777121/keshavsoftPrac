@@ -1,19 +1,22 @@
-import { StartFunc as StartFuncFetchFunc } from "../../DeleteButton/FetchFunc.js";
+import { StartFunc as StartFuncFetchFunc } from "./DeleteButton/FetchFunc.js";;
+let CommonTableColumns;
 
-const StartFunc = () => {
+let StartFunc = ({ inFromFetch }) => {
+    LocalColumns({ inFromFetch });
+    jFLocalShowTable();
+};
+
+let jFLocalShowTable = () => {
     var $table = $('#table');
-    let jVarLocalTableData = localStorage.getItem("tableData");
-    let jVarLocalTableDataParsed = JSON.parse(jVarLocalTableData);
-    console.log("jVarLocalTableDataParsed : ", jVarLocalTableDataParsed);
+
     $table.bootstrapTable('destroy');
 
     $table.bootstrapTable({
         onPostBody: function () {
             $(".fixed-table-toolbar .search .search-input").focus()
         },
-        // onClickRow: LocalOnClickRow,
-        columns: JFLocalColumns(),
-        data: jVarLocalTableDataParsed
+        onClickRow: LocalOnClickRow,
+        columns: CommonTableColumns
     });
 };
 
@@ -29,25 +32,26 @@ let LocalOnClickRow = async (row, $element, field) => {
         });
 
         if (LocalFromSwal.isConfirmed) {
-            console.log("row : ", row);
+            let LocalFromDeleteFetch;
+
             if ("UuId" in row) {
-                StartFuncFetchFunc({ inUuId: row.UuId });
+                LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.UuId });
             } else {
-                StartFuncFetchFunc({ inUuId: row.id });
+                LocalFromDeleteFetch = await StartFuncFetchFunc({ inUuId: row.id });
+            };
+
+            if (LocalFromDeleteFetch) {
+                jFLocalShowTable();
             };
         };
     };
 };
 
-const JFLocalColumns = () => {
-    let jVarLocalDataFromLocalStorage = localStorage.getItem("tableData");
-
-    let LocalColumnsKeysArray = Object.keys(JSON.parse(jVarLocalDataFromLocalStorage)[0]);
+const LocalColumns = ({ inFromFetch }) => {
+    let LocalColumnsKeysArray = Object.keys(inFromFetch[0]);
     let JVarLocalColumnsArray = [];
-    
-    // comment this line if u don't want have delete column the in the table
 
-    // JVarLocalColumnsArray.push({ title: "Delete", formatter: "operateFormatter" })
+    JVarLocalColumnsArray.push({ title: "Delete", formatter: "operateFormatter" })
 
     JVarLocalColumnsArray.push(...LocalColumnsKeysArray.map(element => {
         let LocalObj = {};
@@ -56,7 +60,7 @@ const JFLocalColumns = () => {
         return LocalObj
     }));
 
-    return JVarLocalColumnsArray;
-};
+    CommonTableColumns = JVarLocalColumnsArray;
+}
 
 export { StartFunc };

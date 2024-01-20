@@ -2,14 +2,13 @@ import { StartFunc as StartFuncAddlisteners } from "./Addlisteners/StartFunc.js"
 
 const StartFunc = () => {
     StartFuncAddlisteners();
-
-    jFLocalCallbuttonClick();
+    JfLocalCallbuttonClick();
 };
 
-const jFLocalCallbuttonClick = () => {
+const JfLocalCallbuttonClick = () => {
     let ButtonClickId = "RefreshbuttonIn";
     let jVarLocalButtonClass = document.getElementById(ButtonClickId);
     jVarLocalButtonClass.click();
-};
 
+}
 export { StartFunc };
