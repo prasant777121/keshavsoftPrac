@@ -6,6 +6,16 @@ let StartFunc = async ({ inDataToUpdate, inId }) => {
 
   const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
 
+  const LocalFindId = await LocalTableData.findAll({
+    where: {
+      id: inId,
+    },
+  });
+
+  if (LocalFindId.length === 0) {
+    return await { KTF: false, KReason: "Id not found in data" };
+  }
+
   const LocalAfterUpdate = await LocalTableData.update(LocalDataToUpdate, {
     where: { id: inId },
   });
