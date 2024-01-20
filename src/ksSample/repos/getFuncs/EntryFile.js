@@ -8,7 +8,8 @@ import {
 
 import {
     GetFunc as GetFuncDalsForSequelize,
-    GetBodyCheckFunc as GetBodyCheckFuncFromSequelize
+    GetBodyCheckFunc as GetBodyCheckFuncFromSequelize,
+    GetFuncById as GetFuncByIdForSequelize
 } from '../../dalsForSequelize/getFuncs/EntryFile.js';
 
 import configJson from '../../../Config.json' assert { type: 'json' };
@@ -28,7 +29,10 @@ let GetDataOnlyFunc = async () => {
 
     return GetDataOnlyFuncDal();
 };
-let GetIdFunc = ({ inId }) => {
+let GetIdFunc = async ({ inId }) => {
+    if (configJson.isSequelize) {
+        return await GetFuncByIdForSequelize({ inId });
+    };
     return GetIdFuncDal({ inId });
 };
 
