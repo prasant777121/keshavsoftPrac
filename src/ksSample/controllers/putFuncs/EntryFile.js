@@ -12,9 +12,11 @@ let PutFunc = async (req, res) => {
     inId: LocalIfFromParam,
   });
 
-  // if(){
+  if (LocalFromRepo.KTF === false) {
+    res.status(500).send(LocalFromRepo.KReason);
+    return;
+  };
 
-  // }
   res.json(LocalFromRepo);
 };
 
