@@ -47,7 +47,7 @@ const JFLocalColumns = () => {
     
     // comment this line if u don't want have delete column the in the table
 
-    // JVarLocalColumnsArray.push({ title: "Delete", formatter: "operateFormatter" })
+    JVarLocalColumnsArray.push({ formatter: "operateFormatter" })
 
     JVarLocalColumnsArray.push(...LocalColumnsKeysArray.map(element => {
         let LocalObj = {};

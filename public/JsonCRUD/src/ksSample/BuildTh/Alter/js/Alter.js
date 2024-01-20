@@ -1,8 +1,9 @@
 // import { StartFunc as StartFuncNavMenu } from "./NavMenu/EntryFile.js";
-import { StartFunc as StartFuncAddlisteners } from "./Addlisteners/EntryFile.js";
+import { StartFunc as StartFuncformLoad } from "./formLoad/pullTableData/StartFunc.js";
 import { StartFunc as StartFuncButtonClickFunc } from "./Addlisteners/SaveButtonClickId/ButtonClickFunc.js";
 
 const StartFunc = () => {
+    StartFuncformLoad();
     const form = document.getElementById("FormId");
 
     form.addEventListener('submit', (e) => {
