@@ -6,9 +6,17 @@ import { StartFunc as StartFuncTableNames } from './TableNames.js';
 
 router.get('/', async (req, res) => {
     let LocalTablesArray = await StartFuncTableNames();
-    // let NewLocalTablesArray = LocalTablesArray.find(obj => obj.name);
-    // const keys = Object.values(NewLocalTablesArray)
+    
     res.json(LocalTablesArray);
 });
 
+router.get('/asArray', async (req, res) => {
+    let LocalTablesArray = await StartFuncTableNames();
+
+    let LocalReturnArray = LocalTablesArray.map((element) => element.name);
+
+    res.json(LocalReturnArray);
+});
+
 export { router };
+
