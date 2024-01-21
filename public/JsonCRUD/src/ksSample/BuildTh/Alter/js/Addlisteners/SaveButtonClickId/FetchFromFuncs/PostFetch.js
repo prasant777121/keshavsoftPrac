@@ -4,8 +4,8 @@ import ConfigJson from "../../../Config.json" assert { type: "json" };
 let StartFunc = async () => {
     let LocalroutePath = ConfigJson.routePath;
     let LocaltableName = ConfigJson.tableName;
-    let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
 
+    let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
 
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
     let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/${jVarLocalid}`;

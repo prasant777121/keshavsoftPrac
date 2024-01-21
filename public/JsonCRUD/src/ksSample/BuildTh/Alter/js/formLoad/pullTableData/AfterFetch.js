@@ -10,6 +10,7 @@ let StartFunc = ({ inFromFetch }) => {
             let javrlocalInputClass = clone.querySelector(".InputClass");
 
             javrlocalDisplayTextClass.innerHTML = key;
+            javrlocalInputClass.name = key;
             javrlocalInputClass.value = value;
 
             jVarLocalVerticalRowsDivID.appendChild(clone);
