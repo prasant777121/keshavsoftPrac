@@ -12,6 +12,7 @@ let StartFunc = async () => {
 
     const sequelize = new Sequelize("database", "", LocalPassword, {
         dialect: 'sqlite',
+        logging: false,
         dialectModulePath: '@journeyapps/sqlcipher',
         storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
     });
