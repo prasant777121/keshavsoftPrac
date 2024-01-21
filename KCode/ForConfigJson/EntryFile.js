@@ -10,25 +10,25 @@ let StartFunc = ({ inTableConfig, inFrom, inTo }) => {
     let LocalfileNameJsonData = JSON.parse(LocalFileData);
     LocalfileNameJsonData.DbName = "data.db";
 
-    let LocalNewArray = inTableConfig.map(element => {
-        let LoopInsideObject = {};
-        LoopInsideObject.tableName = element.FileName;
-        LoopInsideObject.tableColumns = {};
+    // let LocalNewArray = inTableConfig.map(element => {
+    //     let LoopInsideObject = {};
+    //     LoopInsideObject.tableName = element.FileName;
+    //     LoopInsideObject.tableColumns = {};
 
-        element.Columns.forEach(LoopColumn => {
-            LoopInsideObject.tableColumns[LoopColumn] = {};
-            LoopInsideObject.tableColumns[LoopColumn].type = "STRING";
-            LoopInsideObject.tableColumns[LoopColumn].allowNull = true;
-        });
+    //     element.Columns.forEach(LoopColumn => {
+    //         LoopInsideObject.tableColumns[LoopColumn] = {};
+    //         LoopInsideObject.tableColumns[LoopColumn].type = "STRING";
+    //         LoopInsideObject.tableColumns[LoopColumn].allowNull = true;
+    //     });
 
-        return LoopInsideObject;
-    });
+    //     return LoopInsideObject;
+    // });
 
-    LocalfileNameJsonData.sequelizeConfig.tableAndColumns = LocalNewArray;
+    LocalfileNameJsonData.sequelizeConfig.tableAndColumns = inTableConfig;
 
     fs.writeFileSync(`${LocalTo}/${LocalFileName}`, JSON.stringify(LocalfileNameJsonData));
 
-    StartFuncForSequelize({ inColumnsJson: LocalNewArray });
+    StartFuncForSequelize({ inColumnsJson: inTableConfig });
 };
 
 let StartFunc_21012024 = ({ inTableConfig, inFrom, inTo }) => {

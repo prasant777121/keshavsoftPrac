@@ -1,21 +1,23 @@
 import fs from "fs";
 import path from "path";
 
-let CommonFromFolderName = "FromData";
-let CommonRoutes = [];
+let CommonFromFolderName = "FromTableColumns";
 
-let StartFunc = ({ inFilesArray }) => {
+let StartFunc = () => {
   let CommonFiles = fs.readdirSync(CommonFromFolderName);
+  let CommonRoutes = [];
 
   CommonFiles.forEach(function (file, index) {
     let LoopInsideObject = {};
-    LoopInsideObject.FileName = path.parse(file).name;
+    LoopInsideObject.tableName = path.parse(file).name;
     let LoopInsideFileData = fs.readFileSync(`${CommonFromFolderName}/${file}`);
     let LoopInsideJsonData = JSON.parse(LoopInsideFileData);
 
-    LoopInsideObject.Columns = Object.keys(LoopInsideJsonData[0]);
+    LoopInsideObject.tableColumns = LoopInsideJsonData;
+    LoopInsideObject.Columns = Object.keys(LoopInsideJsonData);
     CommonRoutes.push(LoopInsideObject);
   });
-}
+  return CommonRoutes;
+};
 
 export{ StartFunc };
