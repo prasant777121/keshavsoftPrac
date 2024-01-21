@@ -8,7 +8,7 @@ let DeleteFunc = async ({ inId }) => {
         return await DeleteSequelizeFuncDal({inId});
     };
 
-    return DeleteFuncDal({ inId });
+    return await DeleteFuncDal({ inId });
 };
 
 export { DeleteFunc };
