@@ -3,10 +3,10 @@ let StartFunc = ({ inFromFetch }) => {
     let jVarLocalVerticalRowsDivID = document.getElementById("VerticalRowsDivID");
 
     let jVarLocalHtmlRows = jVarLocalKeysArray.map(element => {
-        let jVarLoopInsideCol = document.createElement("div");
-        jVarLoopInsideCol.classList.add("col-12");
+        let template = document.getElementById("templateForVerticalRow")
+        const clone = template.content.cloneNode(true);
 
-        return jVarLoopInsideCol;
+        return clone;
     });
 
     jVarLocalHtmlRows.forEach(element => {
