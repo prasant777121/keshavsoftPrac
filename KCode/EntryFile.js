@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
+import { StartFunc as StartFuncPrepareTablesSchema } from "./PrepareTablesSchema/EntryFile.js";
 import { StartFunc as StartFuncBaseDirs } from './BaseDirs/EntryFile.js';
 import { StartFunc as StartFuncForRoutesFile } from './ForRoutesFile/EntryFile.js';
 import { StartFunc as StartFuncCopyDatas } from './CopyDatas/EntryFile.js';
@@ -96,4 +97,4 @@ let StartFunc = ({ inFilesArray }) => {
 };
 
 // console.log("CommonRoutes : ", CommonRoutes);
-StartFunc({ inFilesArray: CommonRoutes });
+StartFunc({ inFilesArray: StartFuncPrepareTablesSchema() });
