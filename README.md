@@ -1,6 +1,12 @@
 # crudGenByPath
 generate end points in expressJs using nodejs
 
+create .env file and insert below keys
+
+KS_SQLITE_PASSWORD=9848163021
+
+
+
 different ways to accomplish
 
 1.  for windows run the batch file : BoilerPlate.bat
