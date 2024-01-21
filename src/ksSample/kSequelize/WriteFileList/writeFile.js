@@ -7,8 +7,18 @@ let StartFunc = async ({ inDataToInsert }) => {
     const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
 
     const LocalFromBuild = LocalTableData.build(localInDataToInsert);
+    
+    let localNewAfterSave;
 
-    let localNewAfterSave = await LocalFromBuild.save();
+    try {
+        localNewAfterSave = await LocalFromBuild.save();
+
+    } catch (error) {
+        return await {
+            KTF: false,
+            KReason: error
+        };
+    };
 
     return await localNewAfterSave.id;
 };

@@ -5,6 +5,25 @@ create .env file and insert below keys
 
 KS_SQLITE_PASSWORD=9848163021
 
+folder locataion where you should define the table schema :FromTableColumns
+
+below the the sample schema for customers.json table : file
+
+{
+    "CustomerName":{
+        "type": "STRING",
+        "allowNull": false
+    },
+    "CustomerMobile":{
+        "type": "NUMBER",
+        "allowNull": false
+    },
+    "CustomerCity":{
+        "type": "STRING",
+        "allowNull": true
+    }
+}
+
 
 
 different ways to accomplish

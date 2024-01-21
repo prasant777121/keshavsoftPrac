@@ -9,7 +9,10 @@ let StartFunc = () => {
 
   CommonFiles.forEach(function (file, index) {
     let LoopInsideObject = {};
+    
     LoopInsideObject.tableName = path.parse(file).name;
+    LoopInsideObject.FileName = path.parse(file).name;
+
     let LoopInsideFileData = fs.readFileSync(`${CommonFromFolderName}/${file}`);
     let LoopInsideJsonData = JSON.parse(LoopInsideFileData);
 

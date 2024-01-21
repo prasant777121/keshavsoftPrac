@@ -17,6 +17,12 @@ let PostFunc = async (req, res) => {
     let LocalModalObject = new ClassSample({ ...LocalBody });
 
     let LocalFromRepo = await PostFuncRepo({ ...LocalModalObject });
+
+    if (LocalFromRepo.KTF === false) {
+        res.status(500).send(LocalFromRepo.KReason);
+        return;
+    };
+
     res.json(LocalFromRepo);
 };
 
