@@ -4,6 +4,7 @@ import { StartFunc as StartFuncButtonClickFunc } from "./Addlisteners/SaveButton
 
 const StartFunc = () => {
     StartFuncformLoad();
+
     const form = document.getElementById("FormId");
 
     form.addEventListener('submit', (e) => {
@@ -15,9 +16,6 @@ const StartFunc = () => {
         // const obj = Object.fromEntries(formData); // Array of arrays to object
         // console.log("aaaaaaaa : ", obj);
     });
-
-
-    // StartFuncAddlisteners();
 };
 
 StartFunc();

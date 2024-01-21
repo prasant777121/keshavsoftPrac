@@ -1,7 +1,10 @@
-import { StartFunc as StartFuncButtonClickFunc } from "./ButtonClickFunc.js";
+import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
+import { StartFunc as StartFuncFetchFunc } from "./FetchFunc.js";
 
-const StartFunc = () => {
-    StartFuncButtonClickFunc();
+let StartFunc = async () => {
+    let jVarLocalFetchData = await StartFuncFetchFunc();
+
+    StartFuncAfterFetch({ inFromFetch: jVarLocalFetchData });
 };
 
 export { StartFunc };
