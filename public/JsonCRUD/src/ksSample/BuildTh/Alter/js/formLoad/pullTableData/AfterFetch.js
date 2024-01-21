@@ -1,17 +1,22 @@
 let StartFunc = ({ inFromFetch }) => {
-    let jVarLocalKeysArray = Object.keys(inFromFetch);
-    let jVarLocalVerticalRowsDivID = document.getElementById("VerticalRowsDivID");
+    try {
+        let jVarLocalVerticalRowsDivID = document.getElementById("VerticalRowsDivID");
 
-    let jVarLocalHtmlRows = jVarLocalKeysArray.map(element => {
-        let template = document.getElementById("templateForVerticalRow")
-        const clone = template.content.cloneNode(true);
+        for (const [key, value] of Object.entries(inFromFetch)) {
+            let template = document.getElementById("templateForVerticalRow");
+            const clone = template.content.cloneNode(true);
 
-        return clone;
-    });
+            let javrlocalDisplayTextClass = clone.querySelector(".DisplayTextClass");
+            let javrlocalInputClass = clone.querySelector(".InputClass");
 
-    jVarLocalHtmlRows.forEach(element => {
-        jVarLocalVerticalRowsDivID.appendChild(element);
-    });
+            javrlocalDisplayTextClass.innerHTML = key;
+            javrlocalInputClass.value = value;
+
+            jVarLocalVerticalRowsDivID.appendChild(clone);
+        }
+    } catch (error) {
+        console.error("Error in StartFunc:", error);
+    }
 };
 
 export { StartFunc };
