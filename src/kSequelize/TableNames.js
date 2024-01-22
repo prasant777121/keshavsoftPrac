@@ -6,7 +6,14 @@ dotenv.config();
 let StartFunc = async () => {
     const sequelize = await StartFuncInitializeSequelize();
 
-    let LocalTablesData = await sequelize.getQueryInterface().showAllSchemas();
+    let LocalTablesData;
+
+    try {
+        LocalTablesData = await sequelize.getQueryInterface().showAllSchemas();
+
+    } catch (error) {
+        return await { KTF: false, KReason: error, ErrorFrom: process.cwd() };
+    };
 
     return await LocalTablesData;
 };

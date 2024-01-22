@@ -7,15 +7,23 @@ let commonDbName = Configjson.DbName;
 let StartFunc = async () => {
     if ("KS_SQLITE_PASSWORD" in process.env === false) {
         console.log("KS_SQLITE_PASSWORD not found in .env file")
-    }
-    let LocalPassword = process.env.KS_SQLITE_PASSWORD;
+    };
 
-    const sequelize = new Sequelize("database", "", LocalPassword, {
-        dialect: 'sqlite',
-        logging: false,
-        dialectModulePath: '@journeyapps/sqlcipher',
-        storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
-    });
+    let sequelize;
+
+    try {
+        let LocalPassword = process.env.KS_SQLITE_PASSWORD;
+
+        sequelize = new Sequelize("database", "", LocalPassword, {
+            dialect: 'sqlite',
+            logging: false,
+            dialectModulePath: '@journeyapps/sqlcipher',
+            storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
+        });
+
+    } catch (error) {
+        return await { KTF: false, KReason: error, ErrorFrom: process.cwd() };
+    };
 
     return await sequelize;
 };
