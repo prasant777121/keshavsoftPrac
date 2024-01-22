@@ -3,6 +3,62 @@
       "type": "STRING",
       "allowNull": true
     },
+    "Status": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "AccountAccountName": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "Address": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "MobileNo": {
+      "type": "NUMBER",
+      "allowNull": true
+    },
+    "ContactNo": {
+      "type": "NUMBER",
+      "allowNull": true
+    },
+    "ModelName": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "JobClassification": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "ProductGroupName": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "WarrantyType": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "JobType": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "AgentRemarks": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "DistanceType": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "DealerName": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "CallFromNo": {
+      "type": "STRING",
+      "allowNull": true
+    },
     "CreationDate": {
       "type": "STRING",
       "allowNull": true
