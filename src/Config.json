@@ -13,7 +13,8 @@
                     },
                     "Mobile": {
                         "type": "NUMBER",
-                        "allowNull": true
+                        "allowNull": true,
+                        "defaultValue": 9848163021
                     },
                     "City": {
                         "type": "STRING",

@@ -7,7 +7,7 @@ let StartFunc = async ({ inDataToInsert }) => {
     const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
 
     const LocalFromBuild = LocalTableData.build(localInDataToInsert);
-    
+
     let localNewAfterSave;
 
     try {

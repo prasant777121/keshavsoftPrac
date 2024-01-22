@@ -13,7 +13,26 @@ let GetFuncById = async ({ inId }) => {
 
 let GetBodyCheckFunc = async () => {
     let LocalColumnsObject = await ColumnsForAlterInTableColumns();
-    return await ColumnsForAlterInTableColumns();
+
+    // Object.entries(LocalColumnsObject).forEach(
+    //     ([key, value]) => {
+    //         value = value.defaultValue;
+    //     }
+    // );
+
+    for (const property in LocalColumnsObject) {
+        if ("defaultValue" in LocalColumnsObject[property] && LocalColumnsObject[property].defaultValue === undefined === false) {
+            LocalColumnsObject[property] = LocalColumnsObject[property].defaultValue;
+        } else {
+            if (LocalColumnsObject[property].type === "NUMBER") {
+                LocalColumnsObject[property] = 0;
+            };
+
+            LocalColumnsObject[property] = "";
+        };
+    };
+
+    return await LocalColumnsObject;
 };
 
 export {
