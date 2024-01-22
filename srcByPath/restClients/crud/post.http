@@ -1,6 +1,0 @@
-POST http://localhost:7016/api/{{ksSample}}
-content-type: application/json
-
-{
-
-}
