@@ -10,6 +10,14 @@
                     "Name": {
                         "type": "STRING",
                         "allowNull": false
+                    },
+                    "Mobile": {
+                        "type": "NUMBER",
+                        "allowNull": true
+                    },
+                    "City": {
+                        "type": "STRING",
+                        "allowNull": true
                     }
                 }
             }
