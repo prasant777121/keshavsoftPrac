@@ -1,7 +1,7 @@
 let StartFunc = ({ inFromFetch }) => {
   let timerInterval;
   Swal.fire({
-    title: `Sucessfully Saved <h2>${inFromFetch}</h2>`,
+    title: `Sucessfully Saved <h2>${inFromFetch.length}</h2>`,
     html: "Inserting.. <b></b> milliseconds.",
     timer: 2000,
     timerProgressBar: true,
