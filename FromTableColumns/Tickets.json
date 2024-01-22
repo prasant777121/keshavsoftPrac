@@ -1,0 +1,10 @@
+  {
+    "JobId": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "CreationDate": {
+      "type": "STRING",
+      "allowNull": true
+    }
+  }
