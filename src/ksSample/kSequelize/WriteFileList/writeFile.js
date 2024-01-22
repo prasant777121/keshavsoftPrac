@@ -1,27 +1,25 @@
-import { ColumnsPullFunc } from '../../DataColumns.js';
-import { StartFunc as StartFuncInitializeSequelizeWithTableName } from '../modals/initializeSequelizeWithTableName.js';
+import { ColumnsPullFunc } from "../../DataColumns.js";
+import { StartFunc as StartFuncInitializeSequelizeWithTableName } from "../modals/initializeSequelizeWithTableName.js";
 
 let StartFunc = async ({ inDataToInsert }) => {
-    let localInDataToInsert = ColumnsPullFunc()(inDataToInsert);
+  let localInDataToInsert = ColumnsPullFunc()(inDataToInsert);
 
-    const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
+  const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
 
-    const LocalFromBuild = LocalTableData.build(localInDataToInsert);
+  const LocalFromBuild = LocalTableData.build(localInDataToInsert);
 
-    let localNewAfterSave;
+  let localNewAfterSave;
 
-    try {
-        localNewAfterSave = await LocalFromBuild.save();
-
-    } catch (error) {
-        return await {
-            KTF: false,
-            KReason: error
-        };
+  try {
+    localNewAfterSave = await LocalFromBuild.save();
+  } catch (error) {
+    return await {
+      KTF: false,
+      KReason: { ErrorFrom: process.cwd(), sqliteError: error },
     };
+  }
 
-    return await localNewAfterSave.id;
+  return await localNewAfterSave.id;
 };
 
 export { StartFunc };
-
