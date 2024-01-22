@@ -18,14 +18,20 @@ const server = http.createServer(app);
 
 var port = normalizePort(process.env.PORT || '7016');
 
+app.disable('x-powered-by');
+
 app.use(cookieParser());
 
 app.use(express.json({ limit: '100mb' }));
 
 app.use('/', express.static(path.join(path.resolve(), 'public')))
 
-app.get('/', (req, res) => {
-    res.json("kkhhhhhhh")
+app.get('/AboutUs', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Accept,Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.end("KeshavSoft : 9848163021");
 });
 
 app.use('/bin', routerbinByPath);
