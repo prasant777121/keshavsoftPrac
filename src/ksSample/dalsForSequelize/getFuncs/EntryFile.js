@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncreadFile } from '../../kSequelize/ReadFileList/readFile.js';
 import { StartFunc as StartFunreadFileFromId } from '../../kSequelize/ReadFileList/readFileFromId.js';
 // import { dataColumns } from '../../kSequelize/modals/prepareColumns.js';
-import { ColumnsForAlter as ColumnsForAlterInTableColumns } from '../../kSequelize/modals/GetTableInfo/TableColumns.js';
+import { ColumnsForAlter as ColumnsForAlterInTableColumns } from '../../kSequelize/modals/GetTableInfo/TableColumnsAsObject.js';
 
 let GetFunc = async () => {
     return await StartFuncreadFile();
@@ -20,17 +20,17 @@ let GetBodyCheckFunc = async () => {
     //     }
     // );
 
-    for (const property in LocalColumnsObject) {
-        if ("defaultValue" in LocalColumnsObject[property] && LocalColumnsObject[property].defaultValue === undefined === false) {
-            LocalColumnsObject[property] = LocalColumnsObject[property].defaultValue;
-        } else {
-            if (LocalColumnsObject[property].type === "NUMBER") {
-                LocalColumnsObject[property] = 0;
-            };
+    // for (const property in LocalColumnsObject) {
+    //     if ("defaultValue" in LocalColumnsObject[property] && LocalColumnsObject[property].defaultValue === undefined === false) {
+    //         LocalColumnsObject[property] = LocalColumnsObject[property].defaultValue;
+    //     } else {
+    //         if (LocalColumnsObject[property].type === "NUMBER") {
+    //             LocalColumnsObject[property] = 0;
+    //         };
 
-            LocalColumnsObject[property] = "";
-        };
-    };
+    //         LocalColumnsObject[property] = "";
+    //     };
+    // };
 
     return await LocalColumnsObject;
 };
