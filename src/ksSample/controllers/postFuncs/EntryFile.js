@@ -52,10 +52,10 @@ let LocalFromArray = ({ inArray }) => {
     return LocalNewAray;
 };
 
-let PostUploadFromModalFunc = (req, res) => {
+let PostUploadFromModalFunc = async (req, res) => {
     let LocalBodyData = req.body;
 
-    let LocalFromRepo = PostUploadFromModalFuncRepo({ LocalBodyAsModal: LocalBodyData });
+    let LocalFromRepo = await PostUploadFromModalFuncRepo({ LocalBodyAsModal: LocalBodyData });
     res.json(LocalFromRepo);
 };
 

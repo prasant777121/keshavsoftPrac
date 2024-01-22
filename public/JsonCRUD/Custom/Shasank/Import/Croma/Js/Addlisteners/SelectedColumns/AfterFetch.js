@@ -1,7 +1,7 @@
 let StartFunc = ({ inFromFetch }) => {
   let timerInterval;
   Swal.fire({
-    title: `Sucessfully Saved <h2>${inFromFetch}</h2>`,
+    title: `Sucessfully Saved <h2>${inFromFetch.length}</h2>`,
     html: "Inserting.. <b></b> milliseconds.",
     timer: 2000,
     timerProgressBar: true,
@@ -17,7 +17,7 @@ let StartFunc = ({ inFromFetch }) => {
     }
   }).then((result) => {
     /* Read more about handling dismissals below */
-    window.location.href = "";
+    // window.location.href = "";
     if (result.dismiss === Swal.DismissReason.timer) {
       console.log("I was closed by the timer");
     }
