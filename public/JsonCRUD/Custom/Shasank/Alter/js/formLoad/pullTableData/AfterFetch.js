@@ -1,4 +1,4 @@
-let StartFunc = ({ inFromFetch }) => {
+let StartFunc1 = ({ inFromFetch }) => {
     try {
         let jVarLocalVerticalRowsDivID = document.getElementById("VerticalRowsDivID");
 
@@ -19,5 +19,11 @@ let StartFunc = ({ inFromFetch }) => {
         console.error("Error in StartFunc:", error);
     }
 };
+
+const StartFunc = ({ inFromFetch }) => {
+    console.log("inFromFetch:",inFromFetch.id);
+
+}
+
 
 export { StartFunc };
