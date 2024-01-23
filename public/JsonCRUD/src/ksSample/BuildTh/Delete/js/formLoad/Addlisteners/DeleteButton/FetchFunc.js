@@ -1,6 +1,7 @@
 import ConfigJson from "../../../Config.json" assert { type: "json" };
 
 let StartFunc = async ({ inUuId }) => {
+    console.log("inUuId:",inUuId);
     let LocalinUuId = inUuId;
     let LocalroutePath = ConfigJson.routePath;
     let LocaltableName = ConfigJson.tableName;
@@ -17,6 +18,7 @@ let StartFunc = async ({ inUuId }) => {
 
     if (jVarFromFetch.status === 200) {
         jFLocalCallbuttonClick();
+        jFLocalAlert({inUuId});
     };
 };
 
@@ -25,5 +27,14 @@ const jFLocalCallbuttonClick = () => {
     let jVarLocalButtonClass = document.getElementById(ButtonClickId);
     jVarLocalButtonClass.click();
 };
+
+const jFLocalAlert = ({inUuId}) => {
+
+    let jVarLocalAlertDivId = document.getElementById("DeletealertId");
+    jVarLocalAlertDivId.classList.add("show");
+    jVarLocalAlertDivId.querySelector("strong").innerText=`${inUuId}`
+
+
+}
 
 export { StartFunc };
