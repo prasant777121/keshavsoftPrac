@@ -22,10 +22,6 @@ let StartFunc = async () => {
                     StartFuncAfterFetch({ inFromFetch: response });
 
                 }
-                // let jVarLocalBodyData = await StartFuncPreparePostData({ inCsvJsonData: jsonArray });
-                // let response = await StartFuncFetchFunc({ inBodyData: jsonArray });
-
-                // StartFuncAfterFetch({ inFromFetch: response });
             };
 
             reader.readAsText(file);
@@ -54,6 +50,7 @@ let convertCsvToJsonFunction = (csvData) => {
         return CsvParseData;
 
     };
+    return CsvParseData;
 
 }
 
@@ -71,9 +68,9 @@ const CromaFunc = ({ ArrayData }) => {
 const PanasonicFunc = ({ ArrayData }) => {
     const selectedData = ArrayData.map(({
         'Job Id': JobId, 'Created Date': CreationDate, Status,
-        'Customer Name': CustomerName, Address, 'Mobile No': MobileNo,
-        'Contact No': ContactNo, ModelName, 'Job Classification': JobClassification, ProductGroupName, 'Warranty Type': WarrantyType, 'Agent Remarks': AgentRemarks, CallFromNo, "Panasonic": Brand, "Distance Type": DistanceType
-    }) => ({ JobId, CreationDate, Status, CustomerName, Address, MobileNo, ContactNo, ModelName, JobClassification, ProductGroupName, WarrantyType, AgentRemarks, CallFromNo, DistanceType, Brand }));
+        'Account: Account Name': CustomerName, Address, 'Mobile No': MobileNo,
+        'Contact No': ContactNo, ModelName, 'Job Classification': JobClassification, ProductGroupName, 'Warranty Type': WarrantyType, 'Job Type': JobType, 'Agent Remarksÿ': AgentRemarks, 'Dealer Name': DealerName, CallFromNo, "Distance Type": DistanceType
+    }) => ({ JobId, CreationDate, Status, CustomerName, Address, MobileNo, ContactNo, ModelName, JobClassification, ProductGroupName, WarrantyType, JobType, AgentRemarks, DealerName, CallFromNo, DistanceType, Brand: 'Panasonic' }));
 
     return selectedData;
 
