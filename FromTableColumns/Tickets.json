@@ -67,5 +67,9 @@
     "Remarks": {
       "type": "STRING",
       "allowNull": true
+    },
+    "Brand": {
+      "type": "STRING",
+      "allowNull": true
     }
   }
