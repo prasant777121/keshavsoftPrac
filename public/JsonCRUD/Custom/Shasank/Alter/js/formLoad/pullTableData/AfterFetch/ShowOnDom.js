@@ -11,11 +11,12 @@ const StartFunc = ({ inFromFetch }) => {
     jFLocalToInputProductGroupNameid({ inProductGroupNameid: inFromFetch.ProductGroupName })
     jFLocalToInputWarrantyTypeid({ inWarrantyTypeid: inFromFetch.WarrantyType })
     jFLocalToInputJobTypeid({ inJobTypeid: inFromFetch.JobType })
-    jFLocalToInputAgentRemarksid({ inDistanceTypeid: inFromFetch.AgentRemarks })
+    jFLocalToInputAgentRemarksid({ inAgentRemarksid: inFromFetch.AgentRemarks })
     jFLocalToInputDistanceTypeid({ inDistanceTypeid: inFromFetch.DistanceType })
     jFLocalToInputDealerNameid({ inDealerNameid: inFromFetch.DealerName })
     jFLocalToInputCallFromNoid({ inCallFromNoid: inFromFetch.CallFromNo })
     jFLocalToInputCreationDateid({ inCreationDateid: inFromFetch.CreationDate })
+    jFLocalToInputRemarksid({ inRemarksid: inFromFetch.Remarks })
 };
 
 
@@ -161,5 +162,14 @@ let jFLocalToInputCreationDateid = ({ inCreationDateid }) => {
    };
 };
 
+
+let jFLocalToInputRemarksid = ({ inRemarksid }) => {
+    let jVarLocalHtmlId = 'Remarksid';
+   let jVarLocalRemarksid = document.getElementById(jVarLocalHtmlId);
+   
+   if (jVarLocalRemarksid === null === false) {
+      jVarLocalRemarksid.value = inRemarksid;
+   };
+};
 
 export { StartFunc };

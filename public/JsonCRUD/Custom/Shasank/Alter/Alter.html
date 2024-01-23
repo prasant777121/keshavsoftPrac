@@ -71,16 +71,60 @@
         </div>
     </nav>
 
+    <div class="mb-3">
+
+        <datalist id="JobTypeDatalistId">
+            <option value="Indoor"></option>
+            <option value="Outdoor "></option>
+            <option value="Callback"></option>
+        </datalist>
+    </div>
+
+    <datalist id="DistanceTypeDatalistId">
+        <option value="Local"></option>
+        <option value="Upcountry "></option>
+    </datalist>
+    </div>
+
+    <datalist id="WarrantyTypeDatalistId">
+        <option value="InWaranty"></option>
+        <option value="Out of Waranty"></option>
+        <option value="EWC"></option>
+    </datalist>
+    </div>
+
+    <datalist id="JobClassificationDatalistId">
+        <option value="Instalation"></option>
+        <option value="Repair"></option>
+        <option value="Demo"></option>
+        <option value="Reinstalation"></option>
+        <option value="PMS"></option>
+        <option value="Dealer Stock SetExpences"></option>
+        <option value="Product Group"></option>
+    </datalist>
+    </div>
+
+    <datalist id="StatusDatalistId">
+        <option value="Assin "></option>
+        <option value="Alloted"></option>
+        <option value="Cancel"></option>
+        <option value="Appointment"></option>
+        <option value="Art bending"></option>
+        <option value="ReAllocated"></option>
+        <option value="Closed by engineer"></option>
+    </datalist>
+    </div>
+
     <div class="container-fluid">
 
         <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg m-4 ">
             <div class="container">
-                <nav aria-label="breadcrumb">
+                <!-- <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="../index.html">Src</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Alter</li>
                     </ol>
-                </nav>
+                </nav> -->
 
                 <h1> <span class="badge bg-secondary" id="JobId">0</span></h1>
                 <!-- <form id="FormId" class="row g-3 needs-validation" novalidate>
@@ -101,39 +145,27 @@
                         </div> -->
 
                         <div class="row">
-                            <div class="col-6">
-                                <label for="validationCustom01" class="form-label DisplayTextClass">CallFromNo</label>
-                                <input type="text" class="form-control InputClass" name="CallFromNo" id="CallFromNoid" required=""
-                                    autofocus="" disabled>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-
-                            <div class="col-6">
+                            <div class="col-4">
                                 <label for="validationCustom01" class="form-label DisplayTextClass">CreationDate</label>
-                                <input type="text" class="form-control InputClass" name="CreationDate" id="CreationDateid" required=""
-                                    autofocus="" disabled>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-6">
-                                <label for="validationCustom01" class="form-label DisplayTextClass">Status</label>
-                                <input type="text" class="form-control InputClass" name="Status" id="StatusId"
-                                    required="" autofocus="">
+                                <input type="text" class="form-control InputClass" name="CreationDate"
+                                    id="CreationDateid" required="" autofocus="" disabled>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
 
-                            <div class="col-6">
-                                <label for="validationCustom01"
-                                    class="form-label DisplayTextClass">CustomerName</label>
-                                <input type="text" class="form-control InputClass" name="CustomerName" id="CustomerNameid" required=""
+                            <div class="col-4">
+                                <label for="validationCustom01" class="form-label DisplayTextClass">CallFromNo</label>
+                                <input type="text" class="form-control InputClass" name="CallFromNo" id="CallFromNoid"
+                                    required="" autofocus="" disabled>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <label for="validationCustom01" class="form-label DisplayTextClass">WarrantyType</label>
+                                <input type="text" class="form-control InputClass" autocomplete="off"
+                                    list="WarrantyTypeDatalistId" name="WarrantyType" id="WarrantyTypeid" required=""
                                     autofocus="">
                                 <div class="valid-feedback">
                                     Looks good!
@@ -141,9 +173,40 @@
                             </div>
                         </div>
 
-                        
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-4">
+                                <label for="validationCustom01" class="form-label DisplayTextClass">Status</label>
+                                <input type="text" class="form-control InputClass" autocomplete="off"
+                                    list="StatusDatalistId" name="Status" id="StatusId" required="" autofocus="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <label for="validationCustom01" class="form-label DisplayTextClass">CustomerName</label>
+                                <input type="text" class="form-control InputClass" name="CustomerName"
+                                    id="CustomerNameid" required="" autofocus="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <label for="validationCustom01"
+                                    class="form-label DisplayTextClass">ProductGroupName</label>
+                                <input type="text" class="form-control InputClass" name="ProductGroupName"
+                                    id="ProductGroupNameid" required="" autofocus="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-4">
                                 <label for="validationCustom01" class="form-label DisplayTextClass">MobileNo</label>
                                 <input type="text" class="form-control InputClass" name="MobileNo" id="MobileNoid"
                                     required="" autofocus="">
@@ -152,7 +215,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-4">
                                 <label for="validationCustom01" class="form-label DisplayTextClass">ContactNo</label>
                                 <input type="text" class="form-control InputClass" name="ContactNo" id="ContactNoid"
                                     required="" autofocus="">
@@ -160,7 +223,18 @@
                                     Looks good!
                                 </div>
                             </div>
+                            <div class="col-4">
+                                <label for="validationCustom01"
+                                    class="form-label DisplayTextClass">JobClassification</label>
+                                <input type="text" class="form-control InputClass" autocomplete="off"
+                                    list="JobClassificationDatalistId" name="JobClassification" id="JobClassificationid"
+                                    required="" autofocus="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
                         </div>
+                       
 
                         <div class="row">
                             <div class="col-6">
@@ -171,45 +245,24 @@
                                     Looks good!
                                 </div>
                             </div>
-
-                            <div class="col-6">
-                                <label for="validationCustom01"
-                                    class="form-label DisplayTextClass">JobClassification</label>
-                                <input type="text" class="form-control InputClass" name="JobClassification"
-                                    id="JobClassificationid" required="" autofocus="">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <label for="validationCustom01"
-                                    class="form-label DisplayTextClass">ProductGroupName</label>
-                                <input type="text" class="form-control InputClass" name="ProductGroupName"
-                                    id="ProductGroupNameid" required="" autofocus="">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <label for="validationCustom01" class="form-label DisplayTextClass">WarrantyType</label>
-                                <input type="text" class="form-control InputClass" name="WarrantyType"
-                                    id="WarrantyTypeid" required="" autofocus="">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-6">
                                 <label for="validationCustom01" class="form-label DisplayTextClass">JobType</label>
-                                <input type="text" class="form-control InputClass" name="JobType" id="JobTypeid"
-                                    required="" autofocus="">
+                                <input type="text" class="form-control InputClass" autocomplete="off"
+                                    list="JobTypeDatalistId" name="JobType" id="JobTypeid" required="" autofocus="">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
+
+                        </div>
+                       
+                        <div class="row">
+                            <!-- <div class="col-6">
+                                <label for="validationCustom01" class="form-label DisplayTextClass">JobType</label>
+                                <input type="text" class="form-control InputClass" autocomplete="off"
+                                    list="JobTypeDatalistId" name="JobType" id="JobTypeid" required="" autofocus="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div> -->
                             </div>
 
                             <div class="col-6">
@@ -225,8 +278,9 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="validationCustom01" class="form-label DisplayTextClass">DistanceType</label>
-                                <input type="text" class="form-control InputClass" name="DistanceType"
-                                    id="DistanceTypeid" required="" autofocus="">
+                                <input type="text" class="form-control InputClass" autocomplete="off"
+                                    list="DistanceTypeDatalistId" name="DistanceType" id="DistanceTypeid" required=""
+                                    autofocus="">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -241,41 +295,26 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="validationCustom01" class="form-label Remarks">Remarks</label>
+                                <input type="text" class="form-control InputClass" name="Remarks" id="Remarksid"
+                                    required="" autofocus="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="validationCustom01" class="form-label DisplayTextClass">Address</label>
+                                <input type="text" class="form-control InputClass" name="Address" id="AddressId"
+                                    required="" autofocus="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                       
 
-                        <div class="col-12">
-                            <label for="validationCustom01" class="form-label DisplayTextClass">Address</label>
-                            <input type="text" class="form-control InputClass" name="Address" id="AddressId" required=""
-                                autofocus="">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-                        <div class="col-12 d-none" >
-                            <label for="validationCustom01" class="form-label DisplayTextClass">createdAt</label>
-                            <input type="text" class="form-control InputClass" name="createdAt" required=""
-                                autofocus="">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-
-                        <div class="col-12 d-none">
-                            <label for="validationCustom01" class="form-label DisplayTextClass">updatedAt</label>
-                            <input type="text" class="form-control InputClass" name="updatedAt" required=""
-                                autofocus="">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="validationCustom01" class="form-label Remarks">Remarks</label>
-                            <input type="text" class="form-control InputClass" name="Remarks" required=""
-                                autofocus="">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                        </div>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" id="ButtonClickId" type="submit">Save</button>

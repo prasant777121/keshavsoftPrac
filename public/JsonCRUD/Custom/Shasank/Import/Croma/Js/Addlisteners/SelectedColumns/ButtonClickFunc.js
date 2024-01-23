@@ -16,10 +16,16 @@ let StartFunc = async () => {
             reader.onload = async function (e) {
                 const csvData = e.target.result;
                 const jsonArray = convertCsvToJsonFunction(csvData);
-                // let jVarLocalBodyData = await StartFuncPreparePostData({ inCsvJsonData: jsonArray });
-                let response = await StartFuncFetchFunc({ inBodyData: jsonArray });
+                if (jsonArray.KTF) {
+                    let response = await StartFuncFetchFunc({ inBodyData: jsonArray.CSVArrayData });
 
-                StartFuncAfterFetch({ inFromFetch: response });
+                    StartFuncAfterFetch({ inFromFetch: response });
+
+                }
+                // let jVarLocalBodyData = await StartFuncPreparePostData({ inCsvJsonData: jsonArray });
+                // let response = await StartFuncFetchFunc({ inBodyData: jsonArray });
+
+                // StartFuncAfterFetch({ inFromFetch: response });
             };
 
             reader.readAsText(file);
@@ -31,21 +37,46 @@ let StartFunc = async () => {
 };
 
 let convertCsvToJsonFunction = (csvData) => {
-    const parsedData = Papa.parse(csvData, { header: true });
-    console.log("parsedData:", parsedData);
+    const parsedData = Papa.parse(csvData, { header: true, skipEmptyLines: true });
+    let CsvParseData = { KTF: false }
 
-    const selectedData = parsedData.data.map(({
+    if ("ExternalReferenceID" in parsedData.data[0]) {
+        console.log("Croma");
+        CsvParseData.CSVArrayData = CromaFunc({ ArrayData: parsedData.data });
+        CsvParseData.KTF = true;
+        return CsvParseData;
+    };
+    if ("Job Id" in parsedData.data[0]) {
+        console.log("panasonic");
+
+        CsvParseData.CSVArrayData = PanasonicFunc({ ArrayData: parsedData.data });
+        CsvParseData.KTF = true;
+        return CsvParseData;
+
+    };
+
+}
+
+const CromaFunc = ({ ArrayData }) => {
+    const selectedData = ArrayData.map(({
         'ExternalReferenceID': JobId, 'Servify Call Creation Date': CreationDate, 'Servify Status': Status,
         'Customer Name': CustomerName, 'Customer Address': Address, 'Customer Mobile No': MobileNo,
         'Customer Alternate Mobile No.': ContactNo, 'Product Name': ModelName, 'Delivery Type': JobClassification, 'Product Category': ProductGroupName, 'Warranty': WarrantyType, 'SubServiceType': JobType, 'PinCode': Distancetype, 'Last Visit Remarks': AgentRemarks, 'Created By': DealerName, CallFromNo, Brand
     }) => ({ JobId, CreationDate, Status, CustomerName, Address, MobileNo, ContactNo, ModelName, JobClassification, ProductGroupName, WarrantyType, JobType, Distancetype, AgentRemarks, DealerName, CallFromNo, Brand }));
 
     return selectedData;
-}
 
-// let convertCsvToJsonFunction = (csvData) => {
-//     const parsedData = Papa.parse(csvData, { header: true });
-//     return parsedData.data;
-// };
+};
+
+const PanasonicFunc = ({ ArrayData }) => {
+    const selectedData = ArrayData.map(({
+        'Job Id': JobId, 'Created Date': CreationDate, Status,
+        'Customer Name': CustomerName, Address, 'Mobile No': MobileNo,
+        'Contact No': ContactNo, ModelName, 'Job Classification': JobClassification, ProductGroupName, 'Warranty Type': WarrantyType, 'Agent Remarks': AgentRemarks, CallFromNo, "Panasonic": Brand, "Distance Type": DistanceType
+    }) => ({ JobId, CreationDate, Status, CustomerName, Address, MobileNo, ContactNo, ModelName, JobClassification, ProductGroupName, WarrantyType, AgentRemarks, CallFromNo, DistanceType, Brand }));
+
+    return selectedData;
+
+}
 
 export { StartFunc };
