@@ -263,6 +263,8 @@ The above copyright notice and this permission notice shall be included in all c
     <script src="./index/assets/js/paper-kit.js?v=2.2.0" type="text/javascript"></script>
 
     <script>
+        let webSocket;
+
         document.addEventListener('DOMContentLoaded', () => {
             function animateSgv(id, delay, delayIncrement) {
                 const logo = document.getElementById(id);
@@ -281,6 +283,8 @@ The above copyright notice and this permission notice shall be included in all c
             animateSgv('KeshavSoftlogoId', 0, 0.5)
         }, false);
     </script>
+
+    <script src="./index/js/WebSocket.js"></script>
 </body>
 
 </html>

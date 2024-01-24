@@ -6,6 +6,8 @@ import { router as routerboilerPlate } from "./config/routes.js";
 
 import { router as routerFromSrc } from "./src/routes.js";
 
+import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
+
 import express from 'express';
 import http from 'http';
 import path from 'path';
@@ -37,6 +39,8 @@ app.get('/AboutUs', (req, res) => {
 app.use('/bin', routerbinByPath);
 app.use('/config', routerboilerPlate);
 app.use('/src', routerFromSrc);
+
+StartFuncKWSServer(server);
 
 function normalizePort(val) {
     var port = parseInt(val, 10);
