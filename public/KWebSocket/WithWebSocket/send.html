@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark" aria-label="Sixth navbar example" id="NavBarId">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Chat App</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample06">
+                    <ul class="navbar-nav me-auto mb-2 mb-xl-0" id="KHeader">
+
+                        <li class="nav-item Bookings">
+                            <a href="../Index.html" class="nav-link active">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z">
+                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z">
+                                    </path>
+                                </svg>
+                                Parent
+                            </a>
+                        </li>
+
+                        <li class="nav-item Bookings">
+                            <a class="nav-link active" aria-current="page" href="../WithTabs/WithTabs.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z">
+                                    </path>
+                                </svg>
+                                With Tabs
+                            </a>
+                        </li>
+
+                        <li class="nav-item Bookings">
+                            <a class="nav-link active" aria-current="page" href="../WithChats/WithChats.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z">
+                                    </path>
+                                    <path
+                                        d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z">
+                                    </path>
+                                </svg>
+                                With Chats
+                            </a>
+                        </li>
+
+                        <li class="nav-item Bookings">
+                            <a class="nav-link active" aria-current="page" href="../OnlineChats/OnlineChats.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z">
+                                    </path>
+                                    <path
+                                        d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z">
+                                    </path>
+                                </svg>
+                                Online Chats
+                            </a>
+                        </li>
+
+                        <li class="nav-item Bookings">
+                            <a class="nav-link active" aria-current="page" href="../ShowServices/ShowServices.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z">
+                                    </path>
+                                    <path
+                                        d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z">
+                                    </path>
+                                </svg>
+                                ShowServices
+                            </a>
+                        </li>
+
+                        <li class="nav-item Bookings">
+                            <a class="nav-link active" aria-current="page"
+                                href="../WithTabsAndChats/WithTabsAndChats.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z">
+                                    </path>
+                                    <path
+                                        d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                                    </path>
+                                </svg>
+                                With Tabs And Chats
+                            </a>
+                        </li>
+
+                        <li class="nav-item Bookings">
+                            <a class="nav-link active" aria-current="page"
+                                href="../../../JSONApi/Html/UserData/Menu/FromData/TreeView/TreeView.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z">
+                                    </path>
+                                </svg>
+                                Tree
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li id="HeaderLoginButtonId">
+                            <a href="#" class="nav-link text-white" id="NavBarloginId">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </svg>
+                                Login
+                            </a>
+                        </li>
+
+                        <div id="HeaderUserIdLi" class="visually-hidden dropdown text-end">
+                            <a href="#" id="HeaderUserIdDropDown" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="nav-link text-white dropdown-toggle">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-person-check-fill d-block mx-auto mb-1 d-none d-md-block"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z">
+                                    </path>
+                                    <path
+                                        d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                    </path>
+                                </svg>
+
+                                UserName
+                            </a>
+                            <ul class="dropdown-menu text-small">
+                                <li><a class="dropdown-item" href="#" id="HeaderLogOutId">
+                                        <i class="bi bi-power" style="font-size: 1.3rem; color:orangered"></i>
+                                        logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
+                                        <div class="mb-3 form-floating is-valid">
+                                            <input type="text" class="form-control" id="KUserNameInput" required="">
+                                            <label for="KUserNameInput">User Name</label>
+                                            <div class="invalid-feedback">
+                                                User Name cannot be empty.
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 form-floating">
+                                            <input type="password" class="form-control" id="KPasswordInput" required="">
+                                            <label for="KPasswordInput">Password</label>
+                                            <div class="invalid-feedback">
+                                                Password cannot be empty.
+                                            </div>
+                                        </div>
+                                        <input id="LoginButtonOnModalId" type="submit" class=" btn btn-primary">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Peer-to-Peer Cue System --- Sender</h1>
+
+            <table class="control">
+                <tr>
+                    <td class="title">Status:</td>
+                    <td class="title">Messages:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="font-weight: bold">ID: </span>
+                        <input type="text" id="receiver-id" title="Input the ID from receive.html">
+                        <button id="connect-button">Connect</button>
+                    </td>
+                    <td>
+                        <input type="text" id="sendMessageBox" placeholder="Enter a message..." autofocus="true" />
+                        <button type="button" id="sendButton">Send</button>
+                        <button type="button" id="clearMsgsButton">Clear Msgs (Local)</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="status" class="status"></div>
+                    </td>
+                    <td>
+                        <div class="message" id="message"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="control-button" id="resetButton">Reset</button>
+                    </td>
+                    <td>
+                        <button type="button" class="control-button" id="goButton">Go</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="control-button" id="fadeButton">Fade</button>
+                    </td>
+                    <td>
+                        <button type="button" class="control-button" id="offButton">Off</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">KeshavSoft</strong>
+                    <small>11 mins ago</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="bg-light d-flex justify-content-between">
+                <div>KeshavSoft v17.11</div>
+
+                <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+
+            var lastPeerId = null;
+            var peer = null; // own peer object
+            var conn = null;
+            var recvIdInput = document.getElementById("receiver-id");
+            var status = document.getElementById("status");
+            var message = document.getElementById("message");
+            var goButton = document.getElementById("goButton");
+            var resetButton = document.getElementById("resetButton");
+            var fadeButton = document.getElementById("fadeButton");
+            var offButton = document.getElementById("offButton");
+            var sendMessageBox = document.getElementById("sendMessageBox");
+            var sendButton = document.getElementById("sendButton");
+            var clearMsgsButton = document.getElementById("clearMsgsButton");
+            var connectButton = document.getElementById("connect-button");
+            var cueString = "<span class=\"cueMsg\">Cue: </span>";
+
+            /**
+             * Create the Peer object for our end of the connection.
+             *
+             * Sets up callbacks that handle any events related to our
+             * peer object.
+             */
+            function initialize() {
+                // Create own peer object with connection to shared PeerJS server
+                peer = new Peer(null, {
+                    debug: 2
+                });
+
+                peer.on('open', function (id) {
+                    // Workaround for peer.reconnect deleting previous id
+                    if (peer.id === null) {
+                        console.log('Received null id from peer open');
+                        peer.id = lastPeerId;
+                    } else {
+                        lastPeerId = peer.id;
+                    }
+
+                    console.log('ID: ' + peer.id);
+                });
+                peer.on('connection', function (c) {
+                    // Disallow incoming connections
+                    c.on('open', function () {
+                        c.send("Sender does not accept incoming connections");
+                        setTimeout(function () { c.close(); }, 500);
+                    });
+                });
+                peer.on('disconnected', function () {
+                    status.innerHTML = "Connection lost. Please reconnect";
+                    console.log('Connection lost. Please reconnect');
+
+                    // Workaround for peer.reconnect deleting previous id
+                    peer.id = lastPeerId;
+                    peer._lastServerId = lastPeerId;
+                    peer.reconnect();
+                });
+                peer.on('close', function () {
+                    conn = null;
+                    status.innerHTML = "Connection destroyed. Please refresh";
+                    console.log('Connection destroyed');
+                });
+                peer.on('error', function (err) {
+                    console.log(err);
+                    alert('' + err);
+                });
+            };
+
+            /**
+             * Create the connection between the two Peers.
+             *
+             * Sets up callbacks that handle any events related to the
+             * connection and data received on it.
+             */
+            function join() {
+                // Close old connection
+                if (conn) {
+                    conn.close();
+                }
+
+                // Create connection to destination peer specified in the input field
+                conn = peer.connect(recvIdInput.value, {
+                    reliable: true
+                });
+
+                conn.on('open', function () {
+                    status.innerHTML = "Connected to: " + conn.peer;
+                    console.log("Connected to: " + conn.peer);
+
+                    // Check URL params for comamnds that should be sent immediately
+                    var command = getUrlParam("command");
+                    if (command)
+                        conn.send(command);
+                });
+                // Handle incoming data (messages only since this is the signal sender)
+                conn.on('data', function (data) {
+                    addMessage("<span class=\"peerMsg\">Peer:</span> " + data);
+                });
+                conn.on('close', function () {
+                    status.innerHTML = "Connection closed";
+                });
+            };
+
+            /**
+             * Get first "GET style" parameter from href.
+             * This enables delivering an initial command upon page load.
+             *
+             * Would have been easier to use location.hash.
+             */
+            function getUrlParam(name) {
+                name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                var regexS = "[\\?&]" + name + "=([^&#]*)";
+                var regex = new RegExp(regexS);
+                var results = regex.exec(window.location.href);
+                if (results == null)
+                    return null;
+                else
+                    return results[1];
+            };
+
+            /**
+             * Send a signal via the peer connection and add it to the log.
+             * This will only occur if the connection is still alive.
+             */
+            function signal(sigName) {
+                if (conn && conn.open) {
+                    conn.send(sigName);
+                    console.log(sigName + " signal sent");
+                    addMessage(cueString + sigName);
+                } else {
+                    console.log('Connection is closed');
+                }
+            }
+
+            goButton.addEventListener('click', function () {
+                signal("Go");
+            });
+            resetButton.addEventListener('click', function () {
+                signal("Reset");
+            });
+            fadeButton.addEventListener('click', function () {
+                signal("Fade");
+            });
+            offButton.addEventListener('click', function () {
+                signal("Off");
+            });
+
+            function addMessage(msg) {
+                var now = new Date();
+                var h = now.getHours();
+                var m = addZero(now.getMinutes());
+                var s = addZero(now.getSeconds());
+
+                if (h > 12)
+                    h -= 12;
+                else if (h === 0)
+                    h = 12;
+
+                function addZero(t) {
+                    if (t < 10)
+                        t = "0" + t;
+                    return t;
+                };
+
+                message.innerHTML = "<br><span class=\"msg-time\">" + h + ":" + m + ":" + s + "</span>  -  " + msg + message.innerHTML;
+            };
+
+            function clearMessages() {
+                message.innerHTML = "";
+                addMessage("Msgs cleared");
+            };
+
+            // Listen for enter in message box
+            sendMessageBox.addEventListener('keypress', function (e) {
+                var event = e || window.event;
+                var char = event.which || event.keyCode;
+                if (char == '13')
+                    sendButton.click();
+            });
+            // Send message
+            sendButton.addEventListener('click', function () {
+                if (conn && conn.open) {
+                    var msg = sendMessageBox.value;
+                    sendMessageBox.value = "";
+                    conn.send(msg);
+                    console.log("Sent: " + msg);
+                    addMessage("<span class=\"selfMsg\">Self: </span> " + msg);
+                } else {
+                    console.log('Connection is closed');
+                }
+            });
+
+            // Clear messages box
+            clearMsgsButton.addEventListener('click', clearMessages);
+            // Start peer connection on click
+            connectButton.addEventListener('click', join);
+
+            // Since all our callbacks are setup, start the process of obtaining an ID
+            initialize();
+        })();
+    </script>
+</body>
+
+</html>
