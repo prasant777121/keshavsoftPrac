@@ -2,7 +2,7 @@ import { StartFunc as StartFuncPortListen } from "./PortListen.js";
 
 import { router as routerbinByPath } from "./bin/routes.js";
 
-import { router as routerboilerPlate } from "./boilerPlate/config.js";
+import { router as routerboilerPlate } from "./config/routes.js";
 
 import { router as routerFromSrc } from "./src/routes.js";
 
