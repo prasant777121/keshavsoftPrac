@@ -30,6 +30,12 @@ different ways to accomplish
 
 1.  for windows run the batch file : BoilerPlate.bat
 
+running the above batch file will result into the below things
+
+1.    bin folder will be created in the root folder ( the backend code )
+2.    bin folder will be created in the public/JsonCRUD ( the frontend code )
+3.    data.db will be created in the KData/JSON/316 ( the sqlite database location )
+
 #
 
 2.  for any operating system run the below commands in the terminal
