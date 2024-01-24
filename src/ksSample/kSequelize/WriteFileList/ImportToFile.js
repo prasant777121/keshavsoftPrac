@@ -10,7 +10,7 @@ let StartFunc = async ({ inDataToInsert }) => {
 
     const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
 
-    const LocalFromBuild = LocalTableData.bulkCreate(inDataToInsert);
+    const LocalFromBuild = await LocalTableData.bulkCreate(inDataToInsert);
 
     // let localNewAfterSave = await LocalFromBuild.save();
 
