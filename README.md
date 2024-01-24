@@ -53,3 +53,9 @@ purpose of this project
 read all the json files in this location :FromData
 
 and create crud for these files
+
+important points about the repository
+
+24 Jan 2024
+
+stopped using encrypted sqlite database, because of no npm modules availability and know how available with our team now.
