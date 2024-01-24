@@ -12,7 +12,10 @@ let StartFunc = async () => {
         LocalTablesData = await sequelize.getQueryInterface().showAllSchemas();
 
     } catch (error) {
-        return await { KTF: false, KReason: error, ErrorFrom: process.cwd() };
+        return await {
+            KTF: false,
+            KReason: { ErrorFrom: process.cwd(), sqliteError: error },
+        };
     };
 
     return await LocalTablesData;
