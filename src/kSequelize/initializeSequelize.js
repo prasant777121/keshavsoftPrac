@@ -13,7 +13,6 @@ let StartFunc = async () => {
             logging: false,
             storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
         });
-
     } catch (error) {
         return await { KTF: false, KReason: error, ErrorFrom: process.cwd() };
     };

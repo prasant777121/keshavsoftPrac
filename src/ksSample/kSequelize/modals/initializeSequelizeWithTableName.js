@@ -10,6 +10,12 @@ let StartFunc = async () => {
 
     const sequelize = await StartFuncInitializeSequelize();
 
+    if ("KTF" in sequelize) {
+        if (sequelize.KTF === false) {
+            return await sequelize;
+        };
+    };
+
     let LocalColumnsNeeded = LocaltableAndColumns.find(element => element.tableName === LocalTableName);
 
     Object.entries(LocalColumnsNeeded.tableColumns).forEach(
