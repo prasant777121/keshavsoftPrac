@@ -8,9 +8,7 @@ let StartFunc = () => {
 };
 
 let LocalFuncCheckEnv = () => {
-    if ("KS_SQLITE_PASSWORD" in process.env === false) {
-        console.log("KS_SQLITE_PASSWORD not found in .env file")
-    };
+
 };
 
 function uuidv4() {

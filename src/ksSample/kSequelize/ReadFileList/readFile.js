@@ -17,22 +17,3 @@ let StartFunc = async () => {
 };
 
 export { StartFunc };
-
-// let StartFunc = async () => {
-//     try {
-//         const sequelize = StartFuncInitializeSequelize();
-
-//         const Tickets = sequelize.define('sample', dataColumns, { freezeTableName: true }
-//         );
-
-//         const users = await Tickets.findAll();
-
-//         const records = users.map(function (result) {
-//             return result.dataValues
-//         });
-
-//         return await records;
-//     } catch (error) {
-//         return await error;
-//     };
-// };

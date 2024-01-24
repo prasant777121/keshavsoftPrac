@@ -1,17 +1,12 @@
 import { Sequelize, DataTypes } from "sequelize";
 
-import dotenv from 'dotenv';
-dotenv.config();
-
 let commonDbName = `KData/JSON/316/data.db`
 
 let StartFunc = async ({ inColumnsJson }) => {
-    let LocalPassword = process.env.KS_SQLITE_PASSWORD;
     let LocalColumnsJson = inColumnsJson;
 
-    const sequelize = new Sequelize("database", "", LocalPassword, {
+    const sequelize = new Sequelize({
         dialect: 'sqlite',
-        dialectModulePath: '@journeyapps/sqlcipher',
         storage: `${commonDbName}` // You can specify the path for your SQLite database file
     });
 

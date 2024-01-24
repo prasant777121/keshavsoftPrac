@@ -1,28 +1,15 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
-import { Sequelize, DataTypes } from "sequelize";
+import { DataTypes } from "sequelize";
 import Configjson from '../../../Config.json' assert { type: 'json' };
 import tableNameJson from '../../tableName.json' assert { type: 'json' };
+// import { StartFunc as StartFuncInitializeSequelize } from "./initializeSequelize.js";
 
-let commonJonPth = Configjson.JsonPath;
-let commonDbName = Configjson.DbName;
+import { StartFunc as StartFuncInitializeSequelize } from "../../../kSequelize/initializeSequelize.js";
 
 let StartFunc = async () => {
     let LocalTableName = tableNameJson.tableName;
     let LocaltableAndColumns = Configjson.sequelizeConfig.tableAndColumns;
 
-    if ("KS_SQLITE_PASSWORD" in process.env === false) {
-        console.log("KS_SQLITE_PASSWORD not found in .env file")
-    };
-
-    let LocalPassword = process.env.KS_SQLITE_PASSWORD;
-
-    const sequelize = new Sequelize("database", "", LocalPassword, {
-        dialect: 'sqlite',
-        dialectModulePath: '@journeyapps/sqlcipher',
-        storage: `${commonJonPth}/${commonDbName}` // You can specify the path for your SQLite database file
-    });
+    const sequelize = await StartFuncInitializeSequelize();
 
     let LocalColumnsNeeded = LocaltableAndColumns.find(element => element.tableName === LocalTableName);
 
