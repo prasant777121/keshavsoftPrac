@@ -12,6 +12,7 @@ import {
 
 import { ClassSample } from '../../ModalClass.js';
 
+
 let PostFunc = async (req, res) => {
     let LocalBody = req.body;
     let LocalModalObject = new ClassSample({ ...LocalBody });
@@ -89,5 +90,5 @@ let PostGetSelectColumnsFunc = (req, res) => {
 
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,PostUploadImageFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostUploadImageFunc
 };
