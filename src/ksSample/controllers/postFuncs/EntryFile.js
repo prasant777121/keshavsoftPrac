@@ -26,6 +26,20 @@ let PostFunc = async (req, res) => {
     res.json(LocalFromRepo);
 };
 
+let PostUploadImageFunc = async (req, res) => {
+    let LocalBody = req.body;
+    let LocalModalObject = new ClassSample({ ...LocalBody });
+
+    let LocalFromRepo = await PostFuncRepo({ ...LocalModalObject });
+
+    if (LocalFromRepo.KTF === false) {
+        res.status(500).send(LocalFromRepo.KReason);
+        return;
+    };
+
+    res.json(LocalFromRepo);
+};
+
 let PostFromModalFunc = (req, res) => {
     let LocalBodyData = req.body;
     let LocalBodyAsModal = ColumnsPullFunc()(LocalBodyData);
@@ -75,5 +89,5 @@ let PostGetSelectColumnsFunc = (req, res) => {
 
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,PostUploadImageFunc
 };

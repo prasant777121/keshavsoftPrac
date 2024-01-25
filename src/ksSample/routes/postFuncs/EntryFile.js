@@ -4,7 +4,7 @@ var router = express.Router();
 
 import {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,PostUploadImageFunc
 } from '../../controllers/postFuncs/EntryFile.js';
 
 import { PostFunc as PostFuncmiddleware } from '../../middlewares/postFuncs/EntryFile.js';
@@ -16,5 +16,6 @@ router.post('/', PostFunc);
 router.post('/FromModal', PostFromModalFunc);
 router.post('/Upload', PostFuncPostUploadFunc, PostUploadFunc);
 router.post('/UploadFromModal', PostUploadFromModalFunc);
+router.post('/UploadImage', PostUploadImageFunc);
 
 export { router };
