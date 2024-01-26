@@ -1,10 +1,7 @@
-import { StartFunc as StartFuncFetchFunc } from "../../DeleteButton/FetchFunc.js";
-
 const StartFunc = () => {
     var $table = $('#table');
     let jVarLocalTableData = localStorage.getItem("tableData");
     let jVarLocalTableDataParsed = JSON.parse(jVarLocalTableData);
-    console.log("jVarLocalTableDataParsed:",jVarLocalTableDataParsed);
 
     $table.bootstrapTable('destroy');
 
@@ -25,7 +22,10 @@ const JFLocalColumns = () => {
 
     // comment this line if u don't want have delete column the in the table
 
-    JVarLocalColumnsArray.push({ formatter: "operateFormatter" })
+    JVarLocalColumnsArray.push({
+        formatter: "jFGlobalAssignButtonClick",
+        title: "Assign"
+    })
 
     JVarLocalColumnsArray.push(...LocalColumnsKeysArray.map(element => {
         let LocalObj = {};
@@ -33,7 +33,7 @@ const JFLocalColumns = () => {
         LocalObj.title = element;
         return LocalObj
     }));
-    console.log("JVarLocalColumnsArray : ", JVarLocalColumnsArray);
+
     return JVarLocalColumnsArray;
 };
 
