@@ -5,11 +5,11 @@ let StartFunc = async () => {
     let LocalroutePath = ConfigJson.routePath;
     let LocaltableName = ConfigJson.tableName;
 
-    // let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
+    let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
 
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
     let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/UploadImage`;
-  
+
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
     // let data = await response.json();
 
