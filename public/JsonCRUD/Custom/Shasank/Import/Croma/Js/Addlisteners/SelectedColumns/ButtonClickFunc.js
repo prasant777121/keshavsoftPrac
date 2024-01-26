@@ -1,12 +1,9 @@
 import { StartFunc as StartFuncCheckBeforeFetch } from "./CheckBeforeFetch.js";
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
 import { StartFunc as StartFuncFetchFunc } from "./FetchFunc.js";
-// import { StartFunc as StartFuncPreparePostData } from "./PreparePostData.js";
-
 
 let StartFunc = async () => {
     if (StartFuncCheckBeforeFetch()) {
-
         const input = document.getElementById('csvFileInput');
         const file = input.files[0];
 
@@ -16,12 +13,15 @@ let StartFunc = async () => {
             reader.onload = async function (e) {
                 const csvData = e.target.result;
                 const jsonArray = convertCsvToJsonFunction(csvData);
+
+                const result = jsonArray.CSVArrayData.filter(word => word.Status === "Cancelled" === false);
+
+                // console.log("jsonArray : ", jsonArray.CSVArrayData, result);
                 if (jsonArray.KTF) {
-                    let response = await StartFuncFetchFunc({ inBodyData: jsonArray.CSVArrayData });
+                    let response = await StartFuncFetchFunc({ inBodyData: result });
 
                     StartFuncAfterFetch({ inFromFetch: response });
-
-                }
+                };
             };
 
             reader.readAsText(file);

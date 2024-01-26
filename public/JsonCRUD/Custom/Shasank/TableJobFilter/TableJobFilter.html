@@ -46,10 +46,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../../Menu.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1 " viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"/>
-                                <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
-                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi d-block mx-auto mb-1 " viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                            </svg>
                             Parent</a>
                     </li>
                     <li class="nav-item">
@@ -83,7 +86,6 @@
                             </svg>
                             Table</a>
                     </li>
-                
 
                     <li class="nav-item">
                         <a id="ImportId" class="nav-link active" aria-current="page" href="../Delete/Delete.html">
@@ -96,16 +98,7 @@
                             </svg>
                             Delete</a>
                     </li>
-    
-                    <li class="nav-item">
-                        <a id="ImportId" class="nav-link text-active" aria-current="page" href="../TableJobFilter/TableJobFilter.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
-                                <path
-                                    d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
-                            </svg>
-                            TableJobFilter</a>
-                    </li>
+
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -144,14 +137,19 @@
 
                 <h1 id="HeadingId">Table Data</h1>
 
-                <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>Deleted on the server!</strong> id.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div> -->
                 <table id="table" data-toolbar="#toolbar" data-search="true" data-pagination="true"
-                    data-searchable="true" data-show-columns="true" data-show-footer="true"
-                    data-show-columns-toggle-all="true" data-click-to-select="true" data-show-export="true"
-                    data-detail-view="true" data-detail-formatter="detailFormatter" data-id-field="pk">
+                    data-searchable="true" data-show-columns="true"
+                    data-show-columns-toggle-all="true" data-show-export="true"
+                    data-detail-view="true" data-detail-formatter="detailFormatter" data-id-field="pk"
+                    data-filter-control="true">
+                    <thead>
+                        <tr>
+                            <th data-field="id">ID</th>
+                            <th data-field="JobId">JobId</th>
+                            <th data-field="Status" data-filter-control="select">Status</th>
+                            
+                        </tr>
+                    </thead>
                 </table>
             </div>
         </main>
@@ -179,7 +177,7 @@
     <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
     <script
         src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
-    <!-- <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script> -->
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

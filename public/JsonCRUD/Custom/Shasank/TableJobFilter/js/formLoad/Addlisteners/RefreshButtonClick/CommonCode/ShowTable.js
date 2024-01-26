@@ -11,7 +11,8 @@ const StartFunc = () => {
         onPostBody: function () {
             $(".fixed-table-toolbar .search .search-input").focus()
         },
-        columns: JFLocalColumns(),
+        // onClickRow: LocalOnClickRow,
+        // columns: JFLocalColumns(),
         data: jVarLocalTableDataParsed
     });
 };
@@ -32,7 +33,10 @@ const JFLocalColumns = () => {
         LocalObj.title = element;
         return LocalObj
     }));
-    console.log("JVarLocalColumnsArray : ", JVarLocalColumnsArray);
+
+    let jVarLocalFindColumn = JVarLocalColumnsArray.find(element => element.field === "Status");
+    jVarLocalFindColumn["filter-control"] = "select";
+    console.log("JVarLocalColumnsArray : ", JVarLocalColumnsArray, jVarLocalFindColumn);
     return JVarLocalColumnsArray;
 };
 
