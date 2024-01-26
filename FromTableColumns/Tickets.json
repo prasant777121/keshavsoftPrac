@@ -71,5 +71,13 @@
     "Brand": {
       "type": "STRING",
       "allowNull": true
+    },
+    "InternalStatus": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "Engineer": {
+      "type": "STRING",
+      "allowNull": true
     }
   }
