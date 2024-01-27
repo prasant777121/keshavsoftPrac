@@ -169,8 +169,35 @@
                 <table id="table" data-toolbar="#toolbar" data-search="true" data-pagination="true"
                     data-searchable="true" data-show-columns="true" data-show-footer="true"
                     data-show-columns-toggle-all="true" data-click-to-select="true" data-show-export="true"
-                    data-detail-view="true" data-detail-formatter="detailFormatter" data-id-field="pk">
+                    data-detail-view="true" data-detail-formatter="detailFormatter" data-id-field="pk" data-filter-control="true">
+                    <thead>
+                        <tr>
+                            <!-- <th data-field="id">ID</th> -->
+                            <th data-formatter="jFGlobalSerialColumn">#</th>
+                            <th data-field="JobId">JobId</th>
+                            <th data-field="Status">Status</th>
+                            <th data-field="CustomerName">CustomerName</th>
+                            <th data-field="Address">Address</th>
+                            <th data-field="MobileNo">Mobile No</th>
+                            <th data-field="ContactNo">Contact No</th>
+                            <th data-field="ModelName">ModelName</th>
+                            <th data-field="JobClassification">Job Classification</th>
+                            <th data-field="ProductGroupName">ProductGroupName</th>
+                            <th data-field="WarrantyType">Warranty Type</th>
+                            <th data-field="JobType">Job Type</th>
+                            <th data-field="AgentRemarks">Agent Remarks</th>
+                            <th data-field="DistanceType">Distance Type</th>
+                            <th data-field="DealerName">Dealer Name</th>
+                            <th data-field="CallFromNo">CallFromNo </th>
+                            <th data-field="Brand">Brand </th>
+                            <th data-field="InternalStatus">InternalStatus </th>
+                            <th data-field="Engineer" data-filter-control="select">Engineer </th>
+                            <th data-field="EngineerRemarks">EngineerRemarks </th>
+                            
+                        </tr>
+                    </thead>
                 </table>
+              
             </div>
         </main>
     </div>
@@ -197,7 +224,7 @@
     <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
     <script
         src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
-    <!-- <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script> -->
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

@@ -10,7 +10,7 @@ const StartFunc = () => {
         onPostBody: function () {
             $(".fixed-table-toolbar .search .search-input").focus()
         },
-        columns: JFLocalColumns(),
+        // columns: JFLocalColumns(),
         data: JVarLocalFilterUnAssinData
     });
 };

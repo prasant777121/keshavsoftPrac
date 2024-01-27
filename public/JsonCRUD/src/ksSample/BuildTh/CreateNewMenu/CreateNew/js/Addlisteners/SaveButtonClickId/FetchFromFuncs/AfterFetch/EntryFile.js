@@ -5,7 +5,7 @@ let StartFunc = async ({ inFromfetch }) => {
         let data = await LocalFromfetch.json(); 
         console.log(data);         
     } 
-  // window.location.href = "../../Table/table.html";
+  window.location.href = "../../Table/table.html";
 };
 
 export { StartFunc };
