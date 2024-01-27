@@ -1,6 +1,6 @@
 import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
-let StartFunc = ({ inFromFetch }) => {
-    StartFuncShowOnDom({ inFromFetch });
+let StartFunc = ({ inFromFetch,InTechnicianData }) => {
+    StartFuncShowOnDom({ inFromFetch,InTechnicianData });
 };
 
 

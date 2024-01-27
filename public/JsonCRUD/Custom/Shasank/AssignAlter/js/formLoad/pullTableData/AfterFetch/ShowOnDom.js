@@ -1,5 +1,4 @@
-const StartFunc = ({ inFromFetch }) => {
-    console.log("inFromFetch:", inFromFetch);
+const StartFunc = ({ inFromFetch, InTechnicianData }) => {
     jFLocalToInputJobId({ inJobId: inFromFetch.JobId })
     jFLocalToInputStatusId({ inStatusId: inFromFetch.Status })
     jFLocalToInputCustomerNameid({ inCustomerNameid: inFromFetch.CustomerName })
@@ -17,6 +16,7 @@ const StartFunc = ({ inFromFetch }) => {
     jFLocalToInputCallFromNoid({ inCallFromNoid: inFromFetch.CallFromNo })
     jFLocalToInputCreationDateid({ inCreationDateid: inFromFetch.CreationDate })
     jFLocalToInputRemarksid({ inRemarksid: inFromFetch.Remarks })
+    jFLocalToInputEngineerDatalistId({ InTechnicianData })
 };
 
 
@@ -39,11 +39,11 @@ let jFLocalToInputStatusId = ({ inStatusId }) => {
 
 let jFLocalToInputCustomerNameid = ({ inCustomerNameid }) => {
     let jVarLocalHtmlId = 'CustomerNameid';
-   let jVarLocalCustomerNameid = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalCustomerNameid === null === false) {
-      jVarLocalCustomerNameid.value = inCustomerNameid;
-   };
+    let jVarLocalCustomerNameid = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalCustomerNameid === null === false) {
+        jVarLocalCustomerNameid.value = inCustomerNameid;
+    };
 };
 let jFLocalToInputAddressId = ({ inAddressId }) => {
     let jVarLocalHtmlId = 'AddressId';
@@ -110,66 +110,82 @@ let jFLocalToInputWarrantyTypeid = ({ inWarrantyTypeid }) => {
 
 let jFLocalToInputJobTypeid = ({ inJobTypeid }) => {
     let jVarLocalHtmlId = 'JobTypeid';
-   let jVarLocalJobTypeid = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalJobTypeid === null === false) {
-      jVarLocalJobTypeid.value = inJobTypeid;
-   };
+    let jVarLocalJobTypeid = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalJobTypeid === null === false) {
+        jVarLocalJobTypeid.value = inJobTypeid;
+    };
 };
 
 let jFLocalToInputAgentRemarksid = ({ inAgentRemarksid }) => {
     let jVarLocalHtmlId = 'AgentRemarksid';
-   let jVarLocalAgentRemarksid = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalAgentRemarksid === null === false) {
-      jVarLocalAgentRemarksid.value = inAgentRemarksid;
-   };
+    let jVarLocalAgentRemarksid = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalAgentRemarksid === null === false) {
+        jVarLocalAgentRemarksid.value = inAgentRemarksid;
+    };
 };
 
 let jFLocalToInputDistanceTypeid = ({ inDistanceTypeid }) => {
     let jVarLocalHtmlId = 'DistanceTypeid';
-   let jVarLocalDistanceTypeid = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalDistanceTypeid === null === false) {
-      jVarLocalDistanceTypeid.value = inDistanceTypeid;
-   };
+    let jVarLocalDistanceTypeid = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalDistanceTypeid === null === false) {
+        jVarLocalDistanceTypeid.value = inDistanceTypeid;
+    };
 };
 
 let jFLocalToInputDealerNameid = ({ inDealerNameid }) => {
     let jVarLocalHtmlId = 'DealerNameid';
-   let jVarLocalDealerNameid = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalDealerNameid === null === false) {
-      jVarLocalDealerNameid.value = inDealerNameid;
-   };
+    let jVarLocalDealerNameid = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalDealerNameid === null === false) {
+        jVarLocalDealerNameid.value = inDealerNameid;
+    };
 };
 
 let jFLocalToInputCallFromNoid = ({ inCallFromNoid }) => {
     let jVarLocalHtmlId = 'CallFromNoid';
-   let jVarLocalCallFromNoid = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalCallFromNoid === null === false) {
-      jVarLocalCallFromNoid.value = inCallFromNoid;
-   };
+    let jVarLocalCallFromNoid = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalCallFromNoid === null === false) {
+        jVarLocalCallFromNoid.value = inCallFromNoid;
+    };
 };
 
 let jFLocalToInputCreationDateid = ({ inCreationDateid }) => {
     let jVarLocalHtmlId = 'CreationDateid';
-   let jVarLocalCreationDateid = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalCreationDateid === null === false) {
-      jVarLocalCreationDateid.value = inCreationDateid;
-   };
+    let jVarLocalCreationDateid = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalCreationDateid === null === false) {
+        jVarLocalCreationDateid.value = inCreationDateid;
+    };
 };
 
 
 let jFLocalToInputRemarksid = ({ inRemarksid }) => {
     let jVarLocalHtmlId = 'Remarksid';
-   let jVarLocalRemarksid = document.getElementById(jVarLocalHtmlId);
-   
-   if (jVarLocalRemarksid === null === false) {
-      jVarLocalRemarksid.value = inRemarksid;
-   };
+    let jVarLocalRemarksid = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalRemarksid === null === false) {
+        jVarLocalRemarksid.value = inRemarksid;
+    };
+};
+
+let jFLocalToInputEngineerDatalistId = ({ InTechnicianData }) => {
+    let jVarLocalHtmlId = 'EngineerDatalistId';
+    let jVarLocalEngineerDatalistId = document.getElementById(jVarLocalHtmlId);
+
+    if (jVarLocalEngineerDatalistId === null === false) {
+        InTechnicianData.forEach(element => {
+            let jVarLocalOption = document.createElement("option");
+            jVarLocalOption.value = element.TechnicianName;
+            jVarLocalOption.innerHTML = element.TechnicianName;
+            jVarLocalEngineerDatalistId.appendChild(jVarLocalOption);
+
+        });
+        //   jVarLocalEngineerDatalistId.value = inValue;
+    };
 };
 
 export { StartFunc };

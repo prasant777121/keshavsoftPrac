@@ -113,6 +113,7 @@
         <option value="ReAllocated"></option>
         <option value="Closed by engineer"></option>
     </datalist>
+    <datalist id="EngineerDatalistId"></datalist>
     </div>
 
     <div class="container-fluid">
@@ -177,7 +178,8 @@
                             <div class="col-4">
                                 <label for="validationCustom01" class="form-label DisplayTextClass">Status</label>
                                 <input type="text" class="form-control InputClass" autocomplete="off"
-                                    list="StatusDatalistId" name="Status" id="StatusId" required="" autofocus="" disabled>
+                                    list="StatusDatalistId" name="Status" id="StatusId" required="" autofocus=""
+                                    disabled>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -306,24 +308,24 @@
                         <div class="row">
                             <div class="col-6 d-none">
                                 <label for="validationCustom01" class="form-label InternalStatus">InternalStatus</label>
-                                <input type="text" value="Allocated" class="form-control InputClass" name="InternalStatus"
-                                    id="InternalStatusId" required="" autofocus="">
+                                <input type="text" value="Allocated" class="form-control InputClass"
+                                    name="InternalStatus" id="InternalStatusId" required="" autofocus="">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
                             <div class="col-6">
                                 <label for="validationCustom01" class="form-label Engineer">Engineer</label>
-                                <input type="text" class="form-control InputClass" name="Engineer" id="EngineerId"
-                                    required="" autofocus="">
+                                <input type="text" class="form-control InputClass" list="EngineerDatalistId"
+                                    name="Engineer" id="EngineerId" required="" autofocus="">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
                             <div class="col-6">
                                 <label for="validationCustom01" class="form-label Engineer">Engineer Remarks</label>
-                                <input type="text" class="form-control InputClass" name="EngineerRemarks" id="EngineerId"
-                                    required="" autofocus="">
+                                <input type="text" class="form-control InputClass" name="EngineerRemarks"
+                                    id="EngineerId" required="" autofocus="">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -360,7 +362,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 
     <script type="module" src="./js/Alter.js"></script>
-    
+
 </body>
 
 </html>
