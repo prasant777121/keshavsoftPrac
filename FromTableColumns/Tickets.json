@@ -79,5 +79,9 @@
     "Engineer": {
       "type": "STRING",
       "allowNull": true
+    },
+    "EngineerRemarks": {
+      "type": "STRING",
+      "allowNull": true
     }
   }
