@@ -39,7 +39,7 @@ const JFLocalColumns = () => {
 };
 
 const JFLocalUnAssingnData = ({ InTableData }) => {
-    let LocalUnAssingnData = InTableData.filter(element => element.Engineer === null);
+    let LocalUnAssingnData = InTableData.filter(element => element.Engineer !== null);
     return LocalUnAssingnData;
 
 }
