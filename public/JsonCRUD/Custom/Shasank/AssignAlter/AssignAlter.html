@@ -304,9 +304,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-6 d-none">
                                 <label for="validationCustom01" class="form-label InternalStatus">InternalStatus</label>
-                                <input type="text" class="form-control InputClass" name="InternalStatus"
+                                <input type="text" value="Allocated" class="form-control InputClass" name="InternalStatus"
                                     id="InternalStatusId" required="" autofocus="">
                                 <div class="valid-feedback">
                                     Looks good!
@@ -315,6 +315,14 @@
                             <div class="col-6">
                                 <label for="validationCustom01" class="form-label Engineer">Engineer</label>
                                 <input type="text" class="form-control InputClass" name="Engineer" id="EngineerId"
+                                    required="" autofocus="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="validationCustom01" class="form-label Engineer">Engineer Remarks</label>
+                                <input type="text" class="form-control InputClass" name="EngineerRemarks" id="EngineerId"
                                     required="" autofocus="">
                                 <div class="valid-feedback">
                                     Looks good!
@@ -352,6 +360,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 
     <script type="module" src="./js/Alter.js"></script>
+    
 </body>
 
 </html>

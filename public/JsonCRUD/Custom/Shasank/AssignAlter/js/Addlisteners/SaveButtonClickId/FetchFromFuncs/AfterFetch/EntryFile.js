@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    window.location.href = "../AssignAlter/AssignAlter.html";
+    window.location.href = "../Assign/Assign.html";
 };
 
 export { StartFunc }
