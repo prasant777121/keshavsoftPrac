@@ -6,10 +6,23 @@ let StartFunc = async () => {
     let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
 
     let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/${jVarLocalid}`;
-    let response = await fetch(jVarLocalFetchUrl);
-    let data = await response.json();
+    let jVarLocalFetchUrl2 = `/${LocalroutePath}/Technicians`;
+    
+    try {
+        let Data = {}
+        const response1 = await fetch(jVarLocalFetchUrl);
+        const data1 = await response1.json();
+        Data.AssingData = data1;
+        const response2 = await fetch(jVarLocalFetchUrl2);
+        const data2 = await response2.json();
+        Data.TechnicianData = data2;
 
-    return await data;
+        return await Data
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+
+
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
@@ -18,6 +31,8 @@ let getUrlQueryParams = ({ inGetKey }) => {
     const value = parameters.get(inGetKey);
     return value;
 };
+
+
 
 
 

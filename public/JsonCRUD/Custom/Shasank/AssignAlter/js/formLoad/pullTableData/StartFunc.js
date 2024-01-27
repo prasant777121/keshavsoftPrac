@@ -4,7 +4,7 @@ import { StartFunc as StartFuncFetchFunc } from "./FetchFunc.js";
 let StartFunc = async () => {
     let jVarLocalFetchData = await StartFuncFetchFunc();
 
-    StartFuncAfterFetch({ inFromFetch: jVarLocalFetchData });
+    StartFuncAfterFetch({ inFromFetch: jVarLocalFetchData.AssingData, InTechnicianData: jVarLocalFetchData.TechnicianData });
 };
 
 export { StartFunc };
