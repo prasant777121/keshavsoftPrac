@@ -18,6 +18,6 @@ router.post('/', PostFunc);
 router.post('/FromModal', PostFromModalFunc);
 router.post('/Upload', PostFuncPostUploadFunc, PostUploadFunc);
 router.post('/UploadFromModal', PostUploadFromModalFunc);
-router.post('/UploadImage', uploadFromMulter.single("image"), PostUploadImageFunc);
+router.post('/UploadImage/:Id', uploadFromMulter.single("image"), PostUploadImageFunc);
 
 export { router };

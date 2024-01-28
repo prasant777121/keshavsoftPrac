@@ -8,7 +8,7 @@ let StartFunc = async () => {
     let jVarLocalid = getUrlQueryParams({ inGetKey: "id" });
 
     let jVarLocalFetchHeaders = StartFuncFetchHeaders();
-    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/UploadImage`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}/UploadImage/${jVarLocalid}`;
 
     let response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
     // let data = await response.json();
