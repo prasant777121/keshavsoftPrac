@@ -1,4 +1,4 @@
-POST http://localhost:7016/src/ksSample/UploadImage
+POST http://localhost:7016/src/ksSample/UploadImage/2
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 20
