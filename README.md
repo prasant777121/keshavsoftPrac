@@ -55,7 +55,7 @@ This project focuses on automating CRUD operations for JSON files, making it eas
         chmod +x boilerplate.sh and sh boilerplate.sh
      ``
    
- 5. For Executing
+ 5. For Executing:
    
    ```
    
