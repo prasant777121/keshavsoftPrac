@@ -6,7 +6,6 @@
 - [Overview](#Overview)
 - [Installation](#installation)
   - [Cloning the Repository](#cloning-the-repository)
-  - [Setting Environment Variables](#setting-environment-variables)
   - [Running the Project](#running-the-project)
 - [Folder Structure](#folder-structure)
 - [Purpose of the Project](#purpose-of-the-project)
@@ -17,7 +16,6 @@ This project focuses on automating CRUD operations for JSON files, making it eas
 - **Dynamic Schema Handling:** Define table schemas using JSON files and dynamically generate CRUD operations.
 - **Cross-Platform Compatibility:** Compatible with Windows, Mac, and Linux operating systems.
 - **Effortless Setup:** Use provided batch files for Windows or simple commands for other OS to set up the project quickly.
-- **Secure Storage:** Utilizes SQLite for data storage with a configurable password (KS_SQLITE_PASSWORD=9848163021).
 - **Automatic Frontend Setup:** Automatically creates a frontend codebase in the public/JsonCRUD directory.
 #### **Technologies Used** 
 - **Node.js:** Leveraging the power of JavaScript on the server-side.
