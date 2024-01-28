@@ -41,14 +41,7 @@ This project focuses on automating CRUD operations for JSON files, making it eas
     cd crudGenByPath
    
    ```
-
-4. Create a .env file in the root directory and add the following
-   ```
-   
-   KS_SQLITE_PASSWORD=9848163021
-   
-   ```
-5. Run the batch file (For Windows)
+4. Run the batch file (For Windows)
    ```
    
    BoilerPlate.bat
@@ -64,7 +57,7 @@ This project focuses on automating CRUD operations for JSON files, making it eas
         chmod +x boilerplate.sh and sh boilerplate.sh
      ``
    
- 7. For Executing
+ 5. For Executing
    
    ```
    
