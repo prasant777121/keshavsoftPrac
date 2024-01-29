@@ -28,15 +28,20 @@ let StartFunc = async () => {
 
 let convertCsvToJsonFunction = (csvData) => {
     const parsedData = Papa.parse(csvData, { header: true, skipEmptyLines: true });
-    console.log("parsedData:", parsedData);
+    let jVarLocalReturnData = jFLocalCancelledFilterFunc({ InData: parsedData.data })
 
-    const selectedData = parsedData.data.map(({
+    const selectedData = jVarLocalReturnData.map(({
         'Job Id': JobId, 'Created Date': CreationDate, Status,
         'Account: Account Name': CustomerName, Address, 'Mobile No': MobileNo,
         'Contact No': ContactNo, ModelName, 'Job Classification': JobClassification, ProductGroupName, 'Warranty Type': WarrantyType, 'Job Type': JobType, 'Agent Remarksÿ': AgentRemarks, 'Dealer Name': DealerName, CallFromNo, "Distance Type": DistanceType
     }) => ({ JobId, CreationDate, Status, CustomerName, Address, MobileNo, ContactNo, ModelName, JobClassification, ProductGroupName, WarrantyType, JobType, AgentRemarks, DealerName, CallFromNo, DistanceType, Brand: 'Panasonic' }));
 
     return selectedData;
-}
+};
+
+const jFLocalCancelledFilterFunc = ({ InData }) => {
+    let jVarLocalReturnData = InData.filter(element => element.Status !== "Cancelled");
+    return jVarLocalReturnData;
+};
 
 export { StartFunc };
