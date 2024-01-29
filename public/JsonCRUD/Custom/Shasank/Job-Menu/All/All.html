@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
-
+    
 </head>
 
 <body>
@@ -158,9 +158,9 @@
                    
 
                     <li class="menu-item">
-                        <a href="../../Table/table.html" class="menu-link">
+                        <a href="/JsonCRUD/Custom/Shasank/Table/table.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-crown"></i>
-                            <div data-i18n="Boxicons">Boxicons</div>
+                            <div data-i18n="Boxicons">Table</div>
                         </a>
                     </li>
 
@@ -170,8 +170,8 @@
                     <!-- Forms -->
                    
                     <!-- Tables -->
-                    <li class="menu-item active">
-                        <a href="#" class="menu-link">
+                    <li class="menu-item ">
+                        <a href="/JsonCRUD/Custom/Shasank/Technician-Menu/Status/Status.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-table"></i>
                             <div data-i18n="Tables">Status</div>
                         </a>
@@ -180,20 +180,20 @@
                     <!-- Jobs & Tables -->
                     <li class="menu-header small text-uppercase"><span class="menu-header-text">Jobs
                     </span></li>
-                    <li class="menu-item">
-                        <a href="../../Job-Menu/All/All.html" class="menu-link">
+                    <li class="menu-item active">
+                        <a href="/JsonCRUD/Custom/Shasank/Job-Menu/All/All.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-table"></i>
                             <div data-i18n="Tables">All</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="../../Job-Menu/Pending/Pending.html" class="menu-link">
+                        <a href="/JsonCRUD/Custom/Shasank/Job-Menu/Pending/Pending.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-table"></i>
                             <div data-i18n="Tables">Pending</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="../../Job-Menu/Complated/Complated.html" class="menu-link">
+                        <a href="/JsonCRUD/Custom/Shasank/Job-Menu/Complated/Complated.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-table"></i>
                             <div data-i18n="Tables">Complated</div>
                         </a>
@@ -342,15 +342,15 @@
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <h4 class="py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
 
-                        <table id="table">
-                            <thead>
-                                <tr>
-                                    <!-- <th data-field="id">ID</th> -->
-                                    <th data-formatter="jFGlobalSerialColumn">#</th>
-                                    <!-- <th data-field="JobId">JobId</th> -->
-                                    <!-- <th data-field="Status">Status</th> -->
-                                    <th data-field="TechnicianName">TechnicianName</th>
-                                    <!-- <th data-field="Address">Address</th>
+                        <table id="table" data-detail-view="true" data-detail-formatter="detailFormatter">
+                                    <thead>
+                                        <tr>
+                                            <!-- <th data-field="id">ID</th> -->
+                                            <th data-formatter="jFGlobalSerialColumn">#</th>
+                                            <th data-field="JobId">JobId</th>
+                                            <!-- <th data-field="Status">Status</th> -->
+                                            <!-- <th data-field="CustomerName">CustomerName</th> -->
+                                            <!-- <th data-field="Address">Address</th>
                                             <th data-field="MobileNo">Mobile No</th>
                                             <th data-field="ContactNo">Contact No</th>
                                             <th data-field="ModelName">ModelName</th>
@@ -364,115 +364,114 @@
                                             <th data-field="CallFromNo">CallFromNo </th>
                                             <th data-field="Brand">Brand </th>
                                             <th data-field="InternalStatus">InternalStatus </th> -->
-                                    <!-- <th data-field="Engineer" data-filter-control="select">Engineer </th> -->
-                                    <!-- <th data-field="EngineerRemarks">EngineerRemarks </th> -->
-                                    <th data-formatter="jFGlobalAssignButtonClick">Show</th>
+                                            <!-- <th data-field="Engineer" data-filter-control="select">Engineer </th> -->
+                                            <th data-field="InternalStatus">InternalStatus </th>
+                                            <!-- <th data-formatter="jFGlobalAssignButtonClick">Show</th> -->
 
-                                </tr>
-                            </thead>
-                        </table>
+                                        </tr>
+                                    </thead>
+                                </table>
 
-
-
-                        <!-- Footer -->
-                        <footer class="content-footer footer bg-footer-theme">
-                            <div
-                                class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                                <div class="mb-2 mb-md-0">
-                                    ©
-                                    <script>
-                                        document.write(new Date().getFullYear());
-                                    </script>
-                                    , made with ❤️ by
-                                    <a href="#" target="_blank"
-                                        class="footer-link fw-medium">Keshavsoft</a>
-                                </div>
-                                <div class="d-none d-lg-inline-block">
-                                    <a href="https://themeselection.com/license/" class="footer-link me-4"
-                                        target="_blank">License</a>
-                                    <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More
-                                        Themes</a>
-
-                                    <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
-                                        target="_blank" class="footer-link me-4">Documentation</a>
-
-                                    <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                                        target="_blank" class="footer-link">Support</a>
-                                </div>
+                       
+                    <!-- Footer -->
+                    <footer class="content-footer footer bg-footer-theme">
+                        <div
+                            class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                            <div class="mb-2 mb-md-0">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                                , made with ❤️ by
+                                <a href="#" target="_blank"
+                                    class="footer-link fw-medium">Keshavsoft</a>
                             </div>
-                        </footer>
-                        <!-- / Footer -->
+                            <div class="d-none d-lg-inline-block">
+                                <a href="https://themeselection.com/license/" class="footer-link me-4"
+                                    target="_blank">License</a>
+                                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More
+                                    Themes</a>
 
-                        <div class="content-backdrop fade"></div>
-                    </div>
-                    <!-- Content wrapper -->
+                                <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
+                                    target="_blank" class="footer-link me-4">Documentation</a>
+
+                                <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                                    target="_blank" class="footer-link">Support</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- / Footer -->
+
+                    <div class="content-backdrop fade"></div>
                 </div>
-                <!-- / Layout page -->
+                <!-- Content wrapper -->
             </div>
-
-            <!-- Overlay -->
-            <div class="layout-overlay layout-menu-toggle"></div>
+            <!-- / Layout page -->
         </div>
-        <!-- / Layout wrapper -->
 
-        <!-- <div class="buy-now">
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- <div class="buy-now">
         <a href="https://themeselection.com/item/sneat-bootstrap-html-admin-template/" target="_blank"
             class="btn btn-danger btn-buy-now">Upgrade to Pro</a>
     </div> -->
 
-        <!-- Core JS -->
-        <!-- build:js assets/vendor/js/core.js -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
 
-        <script src="./assets/vendor/libs/jquery/jquery.js"></script>
-        <script src="./assets/vendor/libs/popper/popper.js"></script>
-        <script src="./assets/vendor/js/bootstrap.js"></script>
-        <script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-        <script src="./assets/vendor/js/menu.js"></script>
+    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="./assets/vendor/libs/popper/popper.js"></script>
+    <script src="./assets/vendor/js/bootstrap.js"></script>
+    <script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="./assets/vendor/js/menu.js"></script>
 
-        <!-- endbuild -->
+    <!-- endbuild -->
 
-        <!-- Vendors JS -->
+    <!-- Vendors JS -->
 
-        <!-- Main JS -->
-        <script src="./assets/js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-        <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+    <!-- Main JS -->
+    <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
-        <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-        <script
-            src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
-        <script
-            src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+    <script
+        src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script>
-            function jFGlobalSerialColumn(value, row, index) {
-                return index + 1;
-            };
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function jFGlobalSerialColumn(value, row, index) {
+            return index + 1;
+        };
 
-            function jFGlobalAssignButtonClick(value, row, index) {
-                return [
-                    `<a class=" DeleteButtonClass" href="../MobileFromTecnician/MobileFromTecnician.html?Engineer=${row.TechnicianName}" data-UuId="${row.UuId}" title="Delete">`,
-                    '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">',
-                    '<path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1"/>',
-                    '</svg>',
-                    '</a>  '
-                ].join('')
-            };
-            function detailFormatter(index, row) {
-                var html = []
-                $.each(row, function (key, value) {
-                    html.push('<p><b>' + key + ':</b> ' + value + '</p>')
-                })
-                return html.join('')
-            }
-        </script>
+        function jFGlobalAssignButtonClick(value, row, index) {
+            return [
+                `<a class=" DeleteButtonClass" href="../Inputs/Technician-inputs.html?id=${row.id}" data-UuId="${row.UuId}" title="Delete">`,
+                '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">',
+                '<path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1"/>',
+                '</svg>',
+                '</a>  '
+            ].join('')
+        };
+        function detailFormatter(index, row) {
+    var html = []
+    $.each(row, function (key, value) {
+      html.push('<p><b>' + key + ':</b> ' + value + '</p>')
+    })
+    return html.join('')
+  }
+    </script>
 
-        <!-- Page JS -->
-        <script type="module" src="./js/StartFunc.js"></script>
+    <!-- Page JS -->
+    <script type="module" src="./js/StartFunc.js"></script>
 
-        <!-- Place this tag in your head or just before your close body tag. -->
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 </body>
 
