@@ -2,9 +2,9 @@ import ConfigJson from "../../../Config.json" assert { type: "json" };
 
 let StartFunc = async () => {
     let LocalroutePath = ConfigJson.routePath;
-    // let LocaltableName = ConfigJson.tableName;
+    let LocaltableName = ConfigJson.tableName;
 
-    let jVarLocalFetchUrl = `/${LocalroutePath}/Technicians`;
+    let jVarLocalFetchUrl = `/${LocalroutePath}/${LocaltableName}`;
     let response = await fetch(jVarLocalFetchUrl);
     let data = await response.json();
 
