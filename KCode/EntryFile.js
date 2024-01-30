@@ -16,19 +16,6 @@ import { StartFunc as StartFuncFortableNameJson } from './FortableNameJson/Entry
 import { StartFunc as StartFuncForFrontEnd } from './ForFrontEnd/ForPublic/EntryFile.js';
 
 let CommonFromFolderName = "FromData";
-let CommonRoutes = [];
-
-let CommonFiles = fs.readdirSync(CommonFromFolderName);
-
-CommonFiles.forEach(function (file, index) {
-    let LoopInsideObject = {};
-    LoopInsideObject.FileName = path.parse(file).name;
-    let LoopInsideFileData = fs.readFileSync(`${CommonFromFolderName}/${file}`);
-    let LoopInsideJsonData = JSON.parse(LoopInsideFileData);
-
-    LoopInsideObject.Columns = Object.keys(LoopInsideJsonData[0]);
-    CommonRoutes.push(LoopInsideObject);
-});
 
 let StartFunc = ({ inFilesArray }) => {
     let LocalFilesArray = inFilesArray;
