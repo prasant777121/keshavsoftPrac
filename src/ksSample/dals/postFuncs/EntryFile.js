@@ -25,7 +25,11 @@ let PostGetSelectColumnsFunc = ({ LocalBodyAsModal }) => {
     return StartFuncReadFileFromModal();
 };
 
+let PostGetUserFunc = ({ LocalBodyAsModal }) => {
+    return StartFuncReadFileFromModal();
+};
+
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostGetUserFunc
 };

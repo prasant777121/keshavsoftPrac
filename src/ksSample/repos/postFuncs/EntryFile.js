@@ -3,11 +3,14 @@ import {
     PostFunc as PostFuncDal,
     PostFromModalFunc as PostFromModalFuncDal,
     PostUploadFunc as PostUploadFuncDal, PostGetSelectColumnsFunc as PostGetSelectColumnsFuncDal,
-    PostUploadFromModalFunc as PostUploadFromModalFuncDal
+    PostUploadFromModalFunc as PostUploadFromModalFuncDal,
+    PostGetUserFunc as PostGetUserFuncDal
 } from '../../dals/postFuncs/EntryFile.js';
 
 import {
-    PostFunc as PostFuncDalsForSequelize, PostUploadFromModalFunc as PostUploadFromModalFuncDalsForSequelize
+    PostFunc as PostFuncDalsForSequelize,
+    PostUploadFromModalFunc as PostUploadFromModalFuncDalsForSequelize,
+    PostGetUserFunc as PostGetUserFuncForSequelize
 } from '../../dalsForSequelize/postFuncs/EntryFile.js';
 
 import configJson from '../../../Config.json' assert { type: 'json' };
@@ -40,7 +43,14 @@ let PostGetSelectColumnsFunc = ({ LocalBodyAsModal }) => {
     return PostGetSelectColumnsFuncDal({ LocalBodyAsModal });
 };
 
+let PostGetUserFunc = async ({ LocalBodyAsModal }) => {
+    if (configJson.isSequelize) {
+        return await PostGetUserFuncForSequelize({LocalBodyAsModal});
+    };
+    return PostGetUserFuncDal({ LocalBodyAsModal });
+};
+
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostGetUserFunc
 };

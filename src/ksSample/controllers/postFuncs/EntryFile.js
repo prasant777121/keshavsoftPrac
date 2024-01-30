@@ -3,7 +3,8 @@ import {
     PostFromModalFunc as PostFromModalFuncRepo,
     PostUploadFunc as PostUploadFuncRepo,
     PostGetSelectColumnsFunc as PostGetSelectColumnsFuncRepo,
-    PostUploadFromModalFunc as PostUploadFromModalFuncRepo
+    PostUploadFromModalFunc as PostUploadFromModalFuncRepo,
+    PostGetUserFunc as PostGetUserFuncRepo
 } from '../../repos/postFuncs/EntryFile.js';
 
 import {
@@ -11,6 +12,8 @@ import {
 } from '../../DataColumns.js';
 
 import { ClassSample } from '../../ModalClass.js';
+
+import { StartFunc as StartFuncTockenGenerate } from "../../../Tocken/Generate.js";
 
 
 let PostFunc = async (req, res) => {
@@ -88,7 +91,18 @@ let PostGetSelectColumnsFunc = (req, res) => {
     res.json(LocalFromRepo);
 };
 
+let PostGetUserFunc = (req, res) => {
+    let LocalBodyData = req.body;
+    let LocalBodyAsModal = ColumnsPullFunc()(LocalBodyData);
+
+    let LocalFromRepo = PostGetUserFuncRepo({ LocalBodyAsModal });
+
+    if (StartFuncTockenGenerate({ inResponceData: LocalFromRepo })) {
+        res.json(LocalFromRepo);
+    };
+};
+
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostUploadImageFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc, PostUploadImageFunc, PostGetUserFunc
 };
