@@ -91,15 +91,20 @@ let PostGetSelectColumnsFunc = (req, res) => {
     res.json(LocalFromRepo);
 };
 
-let PostGetUserFunc = (req, res) => {
+let PostGetUserFunc = async (req, res) => {
     let LocalBodyData = req.body;
     let LocalBodyAsModal = ColumnsPullFunc()(LocalBodyData);
 
-    let LocalFromRepo = PostGetUserFuncRepo({ LocalBodyAsModal });
+    let LocalFromRepo = await PostGetUserFuncRepo({ LocalBodyAsModal });
 
-    if (StartFuncTockenGenerate({ inResponceData: LocalFromRepo })) {
-        res.json(LocalFromRepo);
+    if (Object.keys(LocalFromRepo) !== 0) {
+        let localTocken = StartFuncTockenGenerate({ inResponceData: LocalFromRepo });
+        if (localTocken.KTF) {
+            res.cookie('KToken', localTocken.token, { maxAge: 900000, httpOnly: false });
+            res.json(localTocken);
+        };
     };
+    res.json(LocalFromRepo);
 };
 
 export {

@@ -1,20 +1,22 @@
-import { jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 const StartFunc = ({ inResponceData }) => {
     let localUserName = inResponceData.UserName;
     let localPassword = inResponceData.Password;
     let localid = inResponceData.id;
-    const secretKey = "keshavsoft"; // Replace this with your actual secret key
+    // let secretKey = process.env.KS_TOKEN_FORLOGIN;
+
+    const secretKey = "keshavsoft";
+    let LocalReturnObject = { KTF: false }
 
     const payload = {
-        userId: localid, // Example user ID
-        username: localUserName // Example username
+        userId: localid,
+        username: localUserName
     };
-
-    // Generate a token with the payload and secret key
-    const token = jwt.sign(payload, secretKey, { expiresIn: '1h' }); // Token expires in 1 hour
-    console.log('Generated token:', token);
-    return token;
+    const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+    LocalReturnObject.KTF = true;
+    LocalReturnObject.token = token;
+    return LocalReturnObject;
 
 };
 
