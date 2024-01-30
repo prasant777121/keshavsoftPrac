@@ -5,12 +5,10 @@ let StartFunc = async () => {
         const LocalTableData = await StartFuncInitializeSequelizeWithTableName();
 
         const users = await LocalTableData.findAll();
+        console.log(users.length);
 
-        const records = users.map(function (result) {
-            return result.dataValues
-        });
-
-        return await records;
+        return await users.length;
+        
     } catch (error) {
         return await error;
     };

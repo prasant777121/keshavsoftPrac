@@ -17,6 +17,10 @@ let GetBodyCheckFunc = async () => {
     return await LocalColumnsObject;
 };
 
+let GetRowCountFunc = async () => {
+    return await StartFuncreadFile();
+};
+
 export {
-    GetFunc, GetBodyCheckFunc, GetFuncById
+    GetFunc, GetBodyCheckFunc, GetFuncById,GetRowCountFunc
 };

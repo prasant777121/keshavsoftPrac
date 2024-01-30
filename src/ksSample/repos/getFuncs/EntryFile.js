@@ -9,7 +9,7 @@ import {
 import {
     GetFunc as GetFuncDalsForSequelize,
     GetBodyCheckFunc as GetBodyCheckFuncFromSequelize,
-    GetFuncById as GetFuncByIdForSequelize
+    GetFuncById as GetFuncByIdForSequelize,GetRowCountFunc as GetRowCountFuncFromSequelize
 } from '../../dalsForSequelize/getFuncs/EntryFile.js';
 
 import configJson from '../../../Config.json' assert { type: 'json' };
@@ -57,8 +57,17 @@ let GetBodyCheckFunc = async () => {
     return GetFuncDal();
 };
 
+let GetRowCountFunc = async () => {
+    if (configJson.isSequelize) {
+        let LocalFromSequelize = await GetRowCountFuncFromSequelize();
+        return LocalFromSequelize;
+    };
+
+    return GetFuncDal();
+};
+
 export {
     GetFunc, GetDataOnlyFunc, GetFromModalFunc,
     GetFromModalUuidFunc, GetFromModalUuidAndTSFunc,
-    GetIdFunc, GetBodyCheckFunc
+    GetIdFunc, GetBodyCheckFunc,GetRowCountFunc
 };
