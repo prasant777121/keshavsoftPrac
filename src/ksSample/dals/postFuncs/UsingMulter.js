@@ -1,4 +1,5 @@
 import multer from 'multer';
+import multer from '../../../Config.json';
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
