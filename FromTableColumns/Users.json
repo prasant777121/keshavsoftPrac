@@ -1,0 +1,10 @@
+{
+    "UserName":{
+        "type": "STRING",
+        "allowNull": false
+    },
+    "Passwor":{
+        "type": "STRING",
+        "allowNull": false
+    }
+}
