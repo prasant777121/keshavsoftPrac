@@ -1,28 +1,7 @@
 {
     "JsonPath": "KData/JSON/316",
-    "DbName": "sample.db",
+    "DbName": "data.db",
     "isSequelize": true,
     "sequelizeConfig": {
-        "tableAndColumns": [
-            {
-                "tableName": "ksSample",
-                "tableColumns": {
-                    "Name": {
-                        "type": "STRING",
-                        "allowNull": false,
-                        "unique": true
-                    },
-                    "Mobile": {
-                        "type": "NUMBER",
-                        "allowNull": true,
-                        "defaultValue": 9848163021
-                    },
-                    "City": {
-                        "type": "STRING",
-                        "allowNull": true
-                    }
-                }
-            }
-        ]
     }
 }

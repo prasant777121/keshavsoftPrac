@@ -2,6 +2,6 @@ POST http://localhost:7016/login/validate
 content-type: application/json
 
 {
-    "UserName":"User1",
+    "UserName":"User2",
     "Password":"User1"
 }
