@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { StartFunc as StartFuncForSequelize } from '../ForSequelize/EntryFile.js';
 
-let StartFunc = ({ inTableConfig, inFrom, inTo }) => {
+let StartFunc = async ({ inTableConfig, inFrom, inTo }) => {
     let LocalFileName = "Config.json";
     let LocalFrom = inFrom;
     let LocalTo = inTo;
@@ -14,7 +14,25 @@ let StartFunc = ({ inTableConfig, inFrom, inTo }) => {
 
     fs.writeFileSync(`${LocalTo}/${LocalFileName}`, JSON.stringify(LocalfileNameJsonData));
 
+    LocalFuncCreateFolders({
+        inTableConfig, inTo,
+        inJsonPath: LocalfileNameJsonData.JsonPath
+    });
+
     StartFuncForSequelize({ inColumnsJson: inTableConfig });
+};
+
+let LocalFuncCreateFolders = ({ inJsonPath, inTableConfig, inTo }) => {
+    let LocalTo = inTo;
+    let LocalDataPath = inJsonPath
+    try {
+
+        inTableConfig.forEach(element => {
+            fs.mkdirSync(`${LocalDataPath}/${element.tableName}`)
+        });
+    } catch (err) {
+        console.log(err);
+    };
 };
 
 export { StartFunc };
