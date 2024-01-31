@@ -28,9 +28,8 @@ let PostFunc = async (req, res) => {
 
 let PostFilterFunc = async (req, res) => {
     let LocalBody = req.body;
-    let LocalModalObject = new ClassSample({ ...LocalBody });
 
-    let LocalFromRepo = await PostFilterFuncRepo({ ...LocalModalObject });
+    let LocalFromRepo = await PostFilterFuncRepo({ ...LocalBody });
 
     if (LocalFromRepo.KTF === false) {
         res.status(500).send(LocalFromRepo.KReason);
