@@ -2,6 +2,10 @@ POST http://localhost:7016/src/ksSample/BodyCheck
 content-type: application/json
 
 ###
+POST http://localhost:7016/src/ksSample/Filter
+content-type: application/json
+
+###
 
 
 POST http://localhost:7016/src/ksSample/UploadImage
