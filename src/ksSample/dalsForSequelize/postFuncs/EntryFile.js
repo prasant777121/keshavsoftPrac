@@ -1,8 +1,7 @@
 import { StartFunc as StartFuncwriteFile } from '../../kSequelize/WriteFileList/writeFile.js';
 import { StartFunc as StartFuncImportToFile } from '../../kSequelize/WriteFileList/ImportToFile.js';
 import { StartFunc as StartFuncreadFileUserAndPassword } from '../../kSequelize/ReadFileList/readFileUserAndPassword.js';
-import { StartFunc as StartFuncreadFile } from '../../kSequelize/ReadFileList/readFile.js';
-import { StartFunc as StartFuncreadFilterFile } from '../../kSequelize/ReadFileList/readFile copy.js';
+import { StartFunc as StartFunReadFileWithFilter } from '../../kSequelize/ReadFileList/readFileWithFilter.js';
 
 
 let PostFunc = async (inModalObject) => {
@@ -10,7 +9,7 @@ let PostFunc = async (inModalObject) => {
 };
 
 let PostFilterFunc = async (inModalObject) => {
-    return await StartFuncreadFile({ inDataToInsert: inModalObject });
+    return await StartFunReadFileWithFilter({ inFilterObject: inModalObject });
 };
 
 let PostUploadFromModalFunc = async ({ inDataToInsert }) => {
@@ -23,5 +22,5 @@ let PostGetUserFunc = async ({ LocalBodyAsModal }) => {
 };
 
 export {
-    PostFunc, PostUploadFromModalFunc, PostGetUserFunc,PostFilterFunc
+    PostFunc, PostUploadFromModalFunc, PostGetUserFunc, PostFilterFunc
 };
