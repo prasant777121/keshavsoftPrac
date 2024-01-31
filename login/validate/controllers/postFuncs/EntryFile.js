@@ -2,7 +2,7 @@ import {
     PostGetUserFunc as PostGetUserFuncRepo
 } from '../../repos/postFuncs/EntryFile.js';
 
-// import { StartFunc as StartFuncTockenGenerate } from "../../../Tocken/Generate.js";
+import { StartFunc as StartFuncTockenGenerate } from "../../../Tocken/Generate.js";
 
 let PostGetUserFunc = async (req, res) => {
     let LocalBodyData = req.body;
@@ -13,16 +13,29 @@ let PostGetUserFunc = async (req, res) => {
         inUserName: LocalUserName,
         inPassword: LocalPassword
     });
+    if (LocalFromRepo === undefined) {
+        res.setHeader('Content-Type', 'text/plain');
+        res.send('inValid User Credentils');
+        res.status(203);
+        return;
+    };
 
-    // if (Object.keys(LocalFromRepo) !== 0) {
-    //     let localTocken = StartFuncTockenGenerate({ inResponceData: LocalFromRepo });
-    //     if (localTocken.KTF) {
-    //         res.cookie('KToken', localTocken.token, { maxAge: 900000, httpOnly: false });
-    //         res.json(localTocken);
-    //     };
-    // };
+    if (Object.keys(LocalFromRepo).length > 0) {
+        let localUserName = LocalFromRepo.UserName;
+        let localId = LocalFromRepo.id;
 
-    res.json(LocalFromRepo);
+        let localTocken = StartFuncTockenGenerate({ inUserName: localUserName, inId: localId });
+
+        if (localTocken.KTF) {
+            res.cookie('KToken', localTocken.token, { maxAge: 900000, httpOnly: false });
+            res.setHeader('Content-Type', 'text/plain');
+            res.send(localTocken.token);
+            res.status(200);
+            return;
+        };
+    };
+
+    res.status(204);
 };
 
 export {
