@@ -8,7 +8,7 @@ import {
 
 import {
     PostFunc as PostFuncDalsForSequelize,
-    PostUploadFromModalFunc as PostUploadFromModalFuncDalsForSequelize
+    PostUploadFromModalFunc as PostUploadFromModalFuncDalsForSequelize,PostFilterFunc as PostFilterFuncDalsForSequelize
 } from '../../dalsForSequelize/postFuncs/EntryFile.js';
 
 import configJson from '../../../Config.json' assert { type: 'json' };
@@ -16,6 +16,14 @@ import configJson from '../../../Config.json' assert { type: 'json' };
 let PostFunc = async (inModalObject) => {
     if (configJson.isSequelize) {
         return await PostFuncDalsForSequelize(inModalObject);
+    };
+
+    return PostFuncDal({ inBodyKeys: inModalObject });
+};
+
+let PostFilterFunc = async (inModalObject) => {
+    if (configJson.isSequelize) {
+        return await PostFilterFuncDalsForSequelize(inModalObject);
     };
 
     return PostFuncDal({ inBodyKeys: inModalObject });
@@ -43,5 +51,5 @@ let PostGetSelectColumnsFunc = ({ LocalBodyAsModal }) => {
 
 export {
     PostFunc, PostFromModalFunc,
-    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc
+    PostUploadFunc, PostGetSelectColumnsFunc, PostUploadFromModalFunc,PostFilterFunc
 };
