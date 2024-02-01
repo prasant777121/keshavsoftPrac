@@ -1,16 +1,14 @@
 <h1 align="center" color="#0000FF">crudGenByPath</h1>
 
-[![KeshavSoft Logo](KesavSoft.jpg)](https://keshavsoft.com/)
+[![KeshavSoft Logo](./KesavSoft.jpg)](https://keshavsoft.com/)
 
 ## **Table of Contents** 📚
 - [Overview](#Overview)
 - [Installation](#installation)
-  - [Cloning the Repository](#cloning-the-repository)
-  - [Running the Project](#running-the-project)
 - [Folder Structure](#folder-structure)
 - [Purpose of the Project](#purpose-of-the-project)
 - [Important Points](#important-points)
-## **Overview** 🔎
+### <a name="overview"></a>## **Overview** 🔎
 This project focuses on automating CRUD operations for JSON files, making it easy to manage and manipulate data. It offers a user-friendly interface for performing essential actions on JSON files, such as creating, reading, updating, and deleting records.
 #### **Key Features** 
 - **Dynamic Schema Handling:** Define table schemas using JSON files and dynamically generate CRUD operations.
@@ -23,7 +21,7 @@ This project focuses on automating CRUD operations for JSON files, making it eas
 - **SQLite:** A lightweight, file-based database for efficient data storage.
 - **npm:** The package manager for Node.js used for installing project dependencies.
 
-## **Installation** 🚀
+### <a name="installation"></a>## **Installation** 🚀
 
 1. Create a folder and navigate into it using the command prompt.
 
@@ -62,7 +60,7 @@ This project focuses on automating CRUD operations for JSON files, making it eas
       npm run start
    
    ```
-## **Folder Structure**
+### <a name="folder-structure"></a>## **Folder Structure**
 
 ```plaintext
 ├── KCode/
@@ -87,8 +85,8 @@ This project focuses on automating CRUD operations for JSON files, making it eas
 ├── .env
 └── README.md
 ```
-## **Purpose of the Project** 🎯
+### <a name="purpose-of-the-project"></a>## **Purpose of the Project** 🎯
 The primary objective is to simplify the process of managing and interacting with JSON files. By automating CRUD operations, this project aims to enhance efficiency and reduce the complexity of handling JSON data.
-## **Important Points** 
+### <a name="important-points"></a>## **Important Points** 
 Date: 24 Jan 2024
 Stopped using encrypted SQLite database due to the unavailability of npm modules and limited knowledge within the team.
