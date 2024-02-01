@@ -13,6 +13,7 @@ let PostGetUserFunc = async (req, res) => {
         inUserName: LocalUserName,
         inPassword: LocalPassword
     });
+
     if (LocalFromRepo === undefined) {
         res.setHeader('Content-Type', 'text/plain');
         res.send('inValid User Credentils');
@@ -36,6 +37,7 @@ let PostGetUserFunc = async (req, res) => {
     };
 
     res.status(204);
+    res.end();
 };
 
 export {
