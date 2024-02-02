@@ -8,7 +8,7 @@ let StartFunc = async ({ inFromfetch }) => {
     console.log(data);
   }
   if (LocalFromfetch.status === 200) {
-    window.location.href = `/JsonCRUD/Custom/Shasank/Technician-Menu/MobileFromTecnician/MobileFromTecnician.html?Engineer=${locallocaluserNameId}`;
+    window.location.href = `/JsonCRUD/Custom/ShasankNice/EngineerAdmin/OutSide/MobileFromTecnician/MobileFromTecnician.html?Engineer=${locallocaluserNameId}`;
     console.log(data);
   }
   // window.location.href = "../../Table/table.html";
