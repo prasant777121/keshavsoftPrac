@@ -6,10 +6,8 @@ let StartFunc = () => {
     let jVarLocalfileUpload = document.getElementById("ImageUploadInputId");
     console.log("kkk::",jVarLocalfileUpload.files[0]);
 
-
-    // console.log("sssssssss : ", input);
     var data = new FormData();
-    data.append('image', jVarLocalfileUpload.files[0])
+    data.append('images', jVarLocalfileUpload.files[0])
 
     KeysJson.body = data;
 

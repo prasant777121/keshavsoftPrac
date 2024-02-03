@@ -28,6 +28,7 @@ const JFLocalColumns = () => {
 
     // this is to nagivate to image upload
     JVarLocalColumnsArray.push({ formatter: "ImageFormatter", title: "Image" })
+    JVarLocalColumnsArray.push({ formatter: "MultiImageFormatter", title: "MultiImage" })
 
     JVarLocalColumnsArray.push(...LocalColumnsKeysArray.map(element => {
         let LocalObj = {};
