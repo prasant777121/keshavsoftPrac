@@ -3,5 +3,6 @@ node_modules/
 bin/
 
 public/JsonUi
+public/JsonCRUD/Custom/ShasankNice/
 
 .env
