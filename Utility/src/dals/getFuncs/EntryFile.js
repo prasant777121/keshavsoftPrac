@@ -1,22 +1,24 @@
 import path from 'path';
 import archiver from 'archiver';
 import fs from 'fs';
+
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
 import configJson from '../../../ToConfig.json' assert { type: 'json' };
 
 const LocalDataPath = `../../../../${configJson.Path}`;
 
+let GetFunc = ({ inResponse, callback }) => {
 
-let GetFunc = ({inResponse, callback}) => {
-
-    let LocalUserPK = "361";
+    let LocalUserPK = "316";
 
     if (LocalUserPK > 0) {
         var output = fs.createWriteStream(`${LocalUserPK}.zip`);
 
-        var archive = archiver('zip-encryptable', {
+        var archive = archiver('zip', {
             zlib: { level: 9 },
-            forceLocalTime: true,
-            password: 'KeshavSoft'
+            forceLocalTime: true
         });
 
         archive.pipe(output);
