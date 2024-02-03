@@ -1,0 +1,7 @@
+{
+    "JsonPath": "KData/JSON/316",
+    "DbName": "data.db",
+    "isSequelize": true,
+    "sequelizeConfig": {
+    }
+}
