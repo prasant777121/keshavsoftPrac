@@ -8,6 +8,8 @@ import { router as routerFromSrc } from "./src/routes.js";
 
 import { router as routerForLogin } from "./login/routes.js";
 
+import { router as routerForUtility } from "./Utility/routes.js";
+
 import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
 
 import express from 'express';
@@ -42,6 +44,7 @@ app.use('/bin', routerbinByPath);
 app.use('/config', routerboilerPlate);
 app.use('/src', routerFromSrc);
 app.use('/login', routerForLogin);
+app.use('/utility', routerForUtility);
 
 StartFuncKWSServer(server);
 
