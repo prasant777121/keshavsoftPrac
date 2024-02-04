@@ -90,3 +90,7 @@ The primary objective is to simplify the process of managing and interacting wit
 ### <a name="important-points"></a>## **Important Points** 
 Date: 24 Jan 2024
 Stopped using encrypted SQLite database due to the unavailability of npm modules and limited knowledge within the team.
+
+from Keshav
+
+table name : Users, is needed for user management
