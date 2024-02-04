@@ -1,5 +1,10 @@
 {
     "JsonPath": "KData/JSON/316",
+    "ToDataDetails": {
+        "DataPk": 416,
+        "DataPath": "KData/JSON",
+        "DbName": "data.db"
+    },
     "DbName": "sample.db",
     "isSequelize": true,
     "sequelizeConfig": {

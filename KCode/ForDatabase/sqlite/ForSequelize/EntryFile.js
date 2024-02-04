@@ -1,13 +1,19 @@
 import { Sequelize, DataTypes } from "sequelize";
+import fs from "fs";
 
-let commonDbName = `KData/JSON/316/data.db`
-
-let StartFunc = async ({ inColumnsJson }) => {
+let StartFunc = async ({ inColumnsJson, inFrom }) => {
     let LocalColumnsJson = inColumnsJson;
+
+    let LocalFileName = "Config.json";
+    let LocalFrom = inFrom;
+
+    let LocalFileData = fs.readFileSync(`${LocalFrom}/${LocalFileName}`);
+    let LocalfileNameJsonData = JSON.parse(LocalFileData);
+    let LocalDataPk = LocalfileNameJsonData.ToDataDetails.DataPk;
 
     const sequelize = new Sequelize({
         dialect: 'sqlite',
-        storage: `${commonDbName}` // You can specify the path for your SQLite database file
+        storage: `${LocalfileNameJsonData.ToDataDetails.DataPath}/${LocalDataPk}/${LocalfileNameJsonData.ToDataDetails.DbName}` // You can specify the path for your SQLite database file
     });
 
     LocalColumnsJson.forEach(element => {

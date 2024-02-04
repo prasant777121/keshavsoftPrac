@@ -17,7 +17,7 @@ import { StartFunc as StartFuncFortableNameJson } from './FortableNameJson/Entry
 import { StartFunc as StartFuncForFrontEnd } from './ForFrontEnd/ForPublic/EntryFile.js';
 import { StartFunc as StartFuncForDatabase } from './ForDatabase/EntryFile.js';
 
-let CommonFromFolderName = "FromData";
+let CommonDataPk = "416";
 
 let StartFunc = ({ inFilesArray }) => {
     let LocalFilesArray = inFilesArray;
@@ -27,7 +27,7 @@ let StartFunc = ({ inFilesArray }) => {
     StartFuncBaseDirs();
 
     StartFuncForFrontEnd({ inFilesArray: LocalFilesArray });
-    StartFuncForDatabase({ inFilesArray: LocalFilesArray });
+    StartFuncForDatabase({ inFilesArray: LocalFilesArray, inFrom: CommonFrom });
 
     StartFuncForRoutesFile({
         inEndPointsArray: LocalFilesArray.map(element => element.FileName),
@@ -86,8 +86,7 @@ let StartFunc = ({ inFilesArray }) => {
     });
 };
 
-
-let LocalFilesArray = StartFuncPrepareTablesSchema();
-console.log("LocalFilesArray : ", LocalFilesArray);
+let LocalFilesArray = StartFuncPrepareTablesSchema({ inDataPk: CommonDataPk });
+// console.log("LocalFilesArray : ", LocalFilesArray);
 
 StartFunc({ inFilesArray: LocalFilesArray });

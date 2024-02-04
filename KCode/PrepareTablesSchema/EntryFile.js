@@ -1,10 +1,12 @@
 import fs from "fs";
 import path from "path";
 
-let CommonFromFolderName = "FromTableColumns/416";
+let CommonFromFolderName = "FromTableColumns";
 
-let StartFunc = () => {
-    let CommonFiles = fs.readdirSync(CommonFromFolderName);
+let StartFunc = ({ inDataPk }) => {
+    let LocalDataPk = inDataPk;
+
+    let CommonFiles = fs.readdirSync(`${CommonFromFolderName}/${LocalDataPk}`);
     let CommonRoutes = [];
 
     CommonFiles.forEach(function (file, index) {

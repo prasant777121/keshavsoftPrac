@@ -1,8 +1,9 @@
 import { StartFunc as StartFuncForSequelize } from "./sqlite/ForSequelize/EntryFile.js";
 
-let StartFunc = ({ inFilesArray }) => {
+let StartFunc = ({ inFilesArray, inFrom }) => {
     StartFuncForSequelize({
-        inColumnsJson: inFilesArray
+        inColumnsJson: inFilesArray,
+        inFrom
     });
 };
 

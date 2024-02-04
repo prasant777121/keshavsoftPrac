@@ -8,16 +8,17 @@ let StartFunc = async ({ inTableConfig, inFrom, inTo }) => {
 
     let LocalFileData = fs.readFileSync(`${LocalFrom}/${LocalFileName}`);
     let LocalfileNameJsonData = JSON.parse(LocalFileData);
-    LocalfileNameJsonData.DbName = "data.db";
+    // LocalfileNameJsonData.DbName = "data.db";
+    LocalfileNameJsonData.DbName = LocalfileNameJsonData.ToDataDetails.DbName;
 
     LocalfileNameJsonData.sequelizeConfig.tableAndColumns = inTableConfig;
 
     fs.writeFileSync(`${LocalTo}/${LocalFileName}`, JSON.stringify(LocalfileNameJsonData));
 
-    LocalFuncCreateFolders({
-        inTableConfig, inTo,
-        inJsonPath: LocalfileNameJsonData.JsonPath
-    });
+    // LocalFuncCreateFolders({
+    //     inTableConfig, inTo,
+    //     inJsonPath: `${LocalfileNameJsonData.ToDataDetails.DataPath}/${LocalfileNameJsonData.ToDataDetails.DataPk}`
+    // });
 
     // StartFuncForSequelize({ inColumnsJson: inTableConfig });
 };
