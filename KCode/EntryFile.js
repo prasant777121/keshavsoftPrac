@@ -3,7 +3,9 @@ import fs from 'fs-extra';
 import { StartFunc as StartFuncPrepareTablesSchema } from "./PrepareTablesSchema/EntryFile.js";
 import { StartFunc as StartFuncBaseDirs } from './BaseDirs/EntryFile.js';
 import { StartFunc as StartFuncForRoutesFile } from './ForRoutesFile/EntryFile.js';
-import { StartFunc as StartFuncCopyDatas } from './CopyDatas/EntryFile.js';
+
+// import { StartFunc as StartFuncCopyDatas } from './CopyDatas/EntryFile.js';
+
 import { StartFunc as StartFuncForkLowDb } from './ForkLowDb/EntryFile.js';
 import { StartFunc as StartFuncForDataJson } from './ForDataJson.js';
 import { StartFunc as StartFuncForRestClients } from './ForRestClients/EntryFile.js';
@@ -13,6 +15,7 @@ import { StartFunc as StartFuncForModalClass } from './ForModalClass/EntryFile.j
 import { StartFunc as StartFuncFortableNameJson } from './FortableNameJson/EntryFile.js';
 
 import { StartFunc as StartFuncForFrontEnd } from './ForFrontEnd/ForPublic/EntryFile.js';
+import { StartFunc as StartFuncForDatabase } from './ForDatabase/EntryFile.js';
 
 let CommonFromFolderName = "FromData";
 
@@ -24,6 +27,7 @@ let StartFunc = ({ inFilesArray }) => {
     StartFuncBaseDirs();
 
     StartFuncForFrontEnd({ inFilesArray: LocalFilesArray });
+    StartFuncForDatabase({ inFilesArray: LocalFilesArray });
 
     StartFuncForRoutesFile({
         inEndPointsArray: LocalFilesArray.map(element => element.FileName),
@@ -69,9 +73,9 @@ let StartFunc = ({ inFilesArray }) => {
             inFrom: CommonFrom, inTo: CommonTo
         });
 
-        StartFuncCopyDatas({
-            inFromFolderName: CommonFromFolderName
-        });
+        // StartFuncCopyDatas({
+        //     inFromFolderName: CommonFromFolderName
+        // });
 
         StartFuncFortableNameJson({
             inElement: element.FileName, inColumnsArray: element.Columns,
@@ -82,5 +86,8 @@ let StartFunc = ({ inFilesArray }) => {
     });
 };
 
-// console.log("CommonRoutes : ", CommonRoutes);
-StartFunc({ inFilesArray: StartFuncPrepareTablesSchema() });
+
+let LocalFilesArray = StartFuncPrepareTablesSchema();
+console.log("LocalFilesArray : ", LocalFilesArray);
+
+StartFunc({ inFilesArray: LocalFilesArray });
