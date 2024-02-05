@@ -87,6 +87,6 @@ let StartFunc = ({ inFilesArray }) => {
 };
 
 let LocalFilesArray = StartFuncPrepareTablesSchema({ inDataPk: CommonDataPk });
-console.log("LocalFilesArray : ", LocalFilesArray);
+// console.log("LocalFilesArray : ", LocalFilesArray);
 
 StartFunc({ inFilesArray: LocalFilesArray });
