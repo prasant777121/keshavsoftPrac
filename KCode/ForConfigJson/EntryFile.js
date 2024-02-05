@@ -12,6 +12,7 @@ let StartFunc = async ({ inTableConfig, inFrom, inTo }) => {
     LocalfileNameJsonData.DbName = LocalfileNameJsonData.ToDataDetails.DbName;
 
     LocalfileNameJsonData.sequelizeConfig.tableAndColumns = inTableConfig;
+    LocalfileNameJsonData.JsonPath =`${ LocalfileNameJsonData.ToDataDetails.DataPath}/${LocalfileNameJsonData.ToDataDetails.DataPk}`;
 
     fs.writeFileSync(`${LocalTo}/${LocalFileName}`, JSON.stringify(LocalfileNameJsonData));
 

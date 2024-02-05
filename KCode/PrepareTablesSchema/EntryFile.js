@@ -2,9 +2,10 @@ import fs from "fs";
 import path from "path";
 
 let CommonFromFolderName = "FromTableColumns";
+import ConfigJson from '../../src/Config.json' assert {type: 'json'};
 
 let StartFunc = ({ inDataPk }) => {
-    let LocalDataPk = inDataPk;
+    let LocalDataPk = ConfigJson.ToDataDetails.DataPk;
 
     let CommonFiles = fs.readdirSync(`${CommonFromFolderName}/${LocalDataPk}`);
     let CommonRoutes = [];
