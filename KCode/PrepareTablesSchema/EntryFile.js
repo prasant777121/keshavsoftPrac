@@ -9,14 +9,14 @@ let StartFunc = ({ inDataPk }) => {
 
     let CommonFiles = fs.readdirSync(`${CommonFromFolderName}/${LocalDataPk}`);
     let CommonRoutes = [];
-
+    
     CommonFiles.forEach(function (file, index) {
         let LoopInsideObject = {};
 
         LoopInsideObject.tableName = path.parse(file).name;
         LoopInsideObject.FileName = path.parse(file).name;
 
-        let LoopInsideFileData = fs.readFileSync(`${CommonFromFolderName}/${file}`);
+        let LoopInsideFileData = fs.readFileSync(`${CommonFromFolderName}/${LocalDataPk}/${file}`);
         let LoopInsideJsonData = JSON.parse(LoopInsideFileData);
 
         LoopInsideObject.tableColumns = LoopInsideJsonData;
