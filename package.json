@@ -1,6 +1,6 @@
 {
   "name": "crudgenbypath",
-  "version": "1.0.0",
+  "version": "6.2.24",
   "description": "generate end points in expressJs using nodejs",
   "main": "app.js",
   "type": "module",

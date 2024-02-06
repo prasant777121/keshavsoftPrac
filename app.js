@@ -12,6 +12,8 @@ import { router as routerForUtility } from "./Utility/routes.js";
 
 import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
 
+import packageJSON from './package.json' assert {type: 'json'};
+
 import express from 'express';
 import http from 'http';
 import path from 'path';
@@ -31,6 +33,14 @@ app.use(cookieParser());
 app.use(express.json({ limit: '100mb' }));
 
 app.use('/', express.static(path.join(path.resolve(), 'public')));
+
+app.get('/Version', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Accept,Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.end(packageJSON.version);
+});
 
 app.get('/AboutUs', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
