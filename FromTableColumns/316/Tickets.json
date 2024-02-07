@@ -83,5 +83,9 @@
     "EngineerRemarks": {
       "type": "STRING",
       "allowNull": true
+    },
+    "CompetedRemarks": {
+      "type": "STRING",
+      "allowNull": true
     }
   }
