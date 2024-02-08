@@ -4,7 +4,15 @@ const StartFunc = () => {
     var $table = $('#table');
     let jVarLocalTableData = localStorage.getItem("tableData");
     let jVarLocalTableDataParsed = JSON.parse(jVarLocalTableData);
-    console.log("jVarLocalTableDataParsed : ", jVarLocalTableDataParsed);
+
+    if (jVarLocalTableDataParsed.length === 0) {
+        return;
+    };
+
+    let jVarLocalNoRecordsId = document.getElementById("NoRecordsId");
+
+    jVarLocalNoRecordsId.style.display = "none";
+
     $table.bootstrapTable('destroy');
 
     $table.bootstrapTable({
