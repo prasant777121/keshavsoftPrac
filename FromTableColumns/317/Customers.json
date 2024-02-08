@@ -12,10 +12,5 @@
     "FlatDetails": {
       "type": "STRING",
       "allowNull": true
-    },
-    "GarmentDetails": {
-      "type": "STRING",
-      "allowNull": false,
-      "unique": true
-    },
+    }
   }
