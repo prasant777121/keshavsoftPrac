@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { StartFunc as StartFuncCommonFuncs } from './CommonFuncs.js';
 
 let StartFunc = ({ inElement, inTo }) => {
     let LocalElement = inElement;
@@ -9,6 +10,7 @@ let StartFunc = ({ inElement, inTo }) => {
     LocalForPost({ inElement: LocalElement, inTo: LocalTo, inTypeName: LocalTypeName });
     LocalForDelete({ inElement: LocalElement, inTo: LocalTo, inTypeName: LocalTypeName });
     LocalForImage({ inElement: LocalElement, inTo: LocalTo, inTypeName: LocalTypeName });
+    StartFuncCommonFuncs({ inElement: LocalElement, inTo: LocalTo, inTypeName: LocalTypeName, inFileName: "put.http" });
 };
 
 let LocalForGet = ({ inElement, inTo, inTypeName }) => {
