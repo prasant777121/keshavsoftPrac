@@ -1,3 +1,5 @@
+import fs from "fs";
+
 let StartFunc = ({ inElement, inTo, inTypeName, inFileName }) => {
     let LocalElement = inElement;
     let LocalTypeName = inTypeName;
