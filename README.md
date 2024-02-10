@@ -91,6 +91,12 @@ The primary objective is to simplify the process of managing and interacting wit
 Date: 24 Jan 2024
 Stopped using encrypted SQLite database due to the unavailability of npm modules and limited knowledge within the team.
 
+advanced users
+follow the below steps also
+
+create .env file
+KS_SECRET_FORLOGIN=9848163021
+
 from Keshav
 
 table name : Users, is needed for user management
